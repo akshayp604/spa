@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Spa </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="roomForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname"> Name</label>
+                    <input type="text" class="form-control" formControlName="roomName"
+                    [ngClass]="{ 'is-invalid': submitted && f.roomName.errors }"
+                        placeholder="First Name" id="formrow-Firstname">
+                    <div class="invalid-feedback"
+                        *ngIf="f.roomName.errors && (submitted)">
+                        <div *ngIf="f.roomName.errors.required">Room Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-Surname">Spa</label>
+                    <select class="custom-select" id="inputGroupSelect01"
+                    formControlName="spaId"
+                     [ngClass]="{ 'is-invalid': submitted && f.spaId.errors }" (change)="onchnage($event)">
+                        <option value="">select room...</option>
+                        <option value="{{item.id}}" *ngFor="let item of spalist">{{item.spaName}}</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                      <div class="invalid-feedback"
+                      *ngIf="f.spaId.errors && (submitted )">
+                      <div *ngIf="f.spaId.errors.required">spa is
+                          required</div>
+                  </div>
+                  
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname"> Capacity</label>
+                    <input type="number" class="form-control" formControlName="capacity" min="1"
+                    [ngClass]="{ 'is-invalid': submitted && f.capacity.errors }"
+                        placeholder="First Name" id="formrow-Firstname">
+                    <div class="invalid-feedback"
+                        *ngIf="f.capacity.errors && (submitted)">
+                        <div *ngIf="f.capacity.errors.required">capacity Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

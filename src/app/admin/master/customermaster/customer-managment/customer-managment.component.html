@@ -1,0 +1,226 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Customer </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="customerForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">First Name</label>
+                    <input type="text" class="form-control" formControlName="FirstName"
+                    [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }"
+                        placeholder="First Name" id="formrow-FirstFirstName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.FirstName.errors && (submitted)">
+                        <div *ngIf="f.FirstName.errors.required"> FirstName is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Middle Name</label>
+                    <input type="text" class="form-control" formControlName="MiddleName"
+                    [ngClass]="{ 'is-invalid': submitted && f.MiddleName.errors }"
+                        placeholder=" Middle Name" id="formrow-FirstMiddleName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.MiddleName.errors && (submitted)">
+                        <div *ngIf="f.MiddleName.errors.required"> MiddleName is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Last Name</label>
+                    <input type="text" class="form-control" formControlName="LastName"
+                    [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }"
+                        placeholder="Last Name" id="formrow-FirstLastName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.LastName.errors && (submitted)">
+                        <div *ngIf="f.LastName.errors.required"> LastName is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">email</label>
+                    <input type="text" class="form-control" formControlName="Email"
+                    [ngClass]="{ 'is-invalid': submitted && f.Email.errors }"
+                        placeholder="Email" id="formrow-FirstEmail">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Email.errors && (submitted)">
+                        <div *ngIf="f.Email.errors.required"> email is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Username</label>
+                    <input type="text" class="form-control" formControlName="UserName"
+                    [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }"
+                        placeholder="Username" id="formrow-FirstUserName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.UserName.errors && (submitted)">
+                        <div *ngIf="f.UserName.errors.required"> UserName is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Password</label>
+                    <input type="password" class="form-control" formControlName="Password"
+                    [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"
+                        placeholder="Password" id="formrow-FirstPassword">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Password.errors && (submitted)">
+                        <div *ngIf="f.Password.errors.required"> Password is
+                            required</div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Contact No</label>
+                    <input type="text" class="form-control" formControlName="ContactNo"
+                    [ngClass]="{ 'is-invalid': submitted && f.ContactNo.errors }"
+                        placeholder="Contact No" id="formrow-FirstContactNo">
+                    <div class="invalid-feedback"
+                        *ngIf="f.ContactNo.errors && (submitted)">
+                        <div *ngIf="f.ContactNo.errors.required"> Contact No is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row" >
+            
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Country</label>
+                   
+                        <select class="form-control" formControlName="CountryId"
+                        [ngClass]="{ 'is-invalid': submitted && f.CountryId.errors }"
+                            placeholder="Country" id="formrow-FirstCountryId" (change)="onselect($event)">
+                        <option value="">please select </option>
+                        <option value="{{item.id}}" *ngFor="let item of countrylist">{{item.name}}</option>
+                        </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.CountryId.errors && (submitted)">
+                        <div *ngIf="f.CountryId.errors.required"> Country is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">State</label>
+                        <select class="form-control" formControlName="StateId"
+                        [ngClass]="{ 'is-invalid': submitted && f.StateId.errors }"
+                            placeholder="State" id="formrow-FirstStateId" (change)="onselectstate($event)">
+                        <option value="">please select </option>
+                        <option value="{{item.id}}" *ngFor="let item of filterstate">{{item.name}}</option>
+                        </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.StateId.errors && (submitted)">
+                        <div *ngIf="f.StateId.errors.required"> State is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+          
+    
+            
+        </div>
+        <div class="row" >
+          
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">City</label>
+                    <input type="text" class="form-control" formControlName="City"
+                    [ngClass]="{ 'is-invalid': submitted && f.City.errors }"
+                        placeholder="City" id="formrow-FirstCity">
+                    <div class="invalid-feedback"
+                        *ngIf="f.City.errors && (submitted)">
+                        <div *ngIf="f.City.errors.required"> City is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Zip code</label>
+                    <input type="text" class="form-control" formControlName="ZipCode"
+                    [ngClass]="{ 'is-invalid': submitted && f.ZipCode.errors }"
+                        placeholder="Zip code" id="formrow-FirstZipCode">
+                    <div class="invalid-feedback"
+                        *ngIf="f.ZipCode.errors && (submitted)">
+                        <div *ngIf="f.ZipCode.errors.required"> Zip Code is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Address 1</label>
+                    <input type="text" class="form-control" formControlName="Address1"
+                    [ngClass]="{ 'is-invalid': submitted && f.Address1.errors }"
+                        placeholder="Address 1" id="formrow-FirstAddress1">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Address1.errors && (submitted)">
+                        <div *ngIf="f.Address1.errors.required"> Address1 is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Address 2</label>
+                    <input type="text" class="form-control" formControlName="Address2"
+                    [ngClass]="{ 'is-invalid': submitted && f.Address2.errors }"
+                        placeholder="Address 2" id="formrow-FirstAddress2">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Address2.errors && (submitted)">
+                        <div *ngIf="f.Address2.errors.required"> Address2 is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+        
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

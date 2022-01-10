@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Country </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="countryform">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Country Name</label>
+                    <input type="text" class="form-control" formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                        placeholder="First Name" id="formrow-Firstname">
+                    <div class="invalid-feedback"
+                        *ngIf="f.name.errors && (submitted)">
+                        <div *ngIf="f.name.errors.required">Country Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-Surname">Code</label>
+                    <input type="text" class="form-control" formControlName="code"
+                     placeholder="code"
+                     [ngClass]="{ 'is-invalid': submitted && f.code.errors }"
+                        id="formrow-Surname">
+                    <div class="invalid-feedback"
+                        *ngIf="f.code.errors && (submitted )">
+                        <div *ngIf="f.code.errors.required">code is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

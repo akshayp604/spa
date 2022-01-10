@@ -1,0 +1,107 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Package </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="packageForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Name</label>
+                    <input type="text" class="form-control" formControlName="Name"
+                    [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+                        placeholder="Name" id="formrow-FirstName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Name.errors && (submitted)">
+                        <div *ngIf="f.Name.errors.required"> Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Description</label>
+                    <input type="text" class="form-control" formControlName="Description"
+                    [ngClass]="{ 'is-invalid': submitted && f.Description.errors }"
+                        placeholder="Description" id="formrow-FirstDescription">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Description.errors && (submitted)">
+                        <div *ngIf="f.Description.errors.required"> Description is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname12">Duration</label>
+                  
+                        <!-- <ngb-timepicker  [(ngModel)]="Duration" formControlName="Duration" ></ngb-timepicker> -->
+
+                    <!-- <div class="invalid-feedback"
+                        *ngIf="f.Duration.errors && (submitted)">
+                        <div *ngIf="f.Duration.errors.required"> Duration is
+                            required</div>
+                    </div> -->
+                    <input type="number" class="form-control" formControlName="Duration"
+                    [ngClass]="{ 'is-invalid': submitted && f.Duration.errors }"
+                        placeholder="Duration" id="formrow-FirstDuration">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Duration.errors && (submitted)">
+                        <div *ngIf="f.Duration.errors.required"> Duration is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Price</label>
+                    <input type="number" class="form-control" formControlName="Price"
+                    [ngClass]="{ 'is-invalid': submitted && f.Price.errors }"
+                        placeholder="Price" id="formrow-FirstPrice">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Price.errors && (submitted)">
+                        <div *ngIf="f.Price.errors.required"> Price is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" >
+           
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Discount</label>
+                    <input type="number" class="form-control" formControlName="Discount"
+                    [ngClass]="{ 'is-invalid': submitted && f.Discount.errors }"
+                        placeholder="Discount" id="formrow-FirstDiscount">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Discount.errors && (submitted)">
+                        <div *ngIf="f.Discount.errors.required"> Discount is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+        
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

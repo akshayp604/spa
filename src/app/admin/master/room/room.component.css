@@ -1,0 +1,11 @@
+.btn_new {
+    background: #111927;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+span.icon_custome {
+    margin-right: 5px;
+}

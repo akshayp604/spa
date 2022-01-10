@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Therapy Categoory </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="categoryForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Category Name </label>
+                    <input type="text" class="form-control" formControlName="Name"
+                    [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+                        placeholder="Name" id="formrow-FirstName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Name.errors && (submitted)">
+                        <div *ngIf="f.Name.errors.required"> Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Code </label>
+                    <input type="text" class="form-control" formControlName="Code"
+                    [ngClass]="{ 'is-invalid': submitted && f.Code.errors }"
+                        placeholder="Code" id="formrow-FirstCode">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Code.errors && (submitted)">
+                        <div *ngIf="f.Code.errors.required"> Code is
+                            required</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+      
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

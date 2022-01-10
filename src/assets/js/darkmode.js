@@ -1,0 +1,4 @@
+/*Dark Mode*/
+$(".dark-mode-toogler").click(function () {
+  $("body").toggleClass("dark-mode");
+});

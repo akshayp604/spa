@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar static-top ">
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <img src="assets/images/menu.svg" class="toggle_img">
+    </button>
+    <div class="d-none d-sm-inline-block ">
+       <div class="admin_header">
+          <h1 class="admin_header_txt">Appointments</h1>
+       </div>
+    </div>
+    <ul class="align-items-center navbar-nav ml-auto navigater">
+       <li class="nav-item">
+          <a href="" class="nav-link " id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="assets/images/search-icon.svg" class="toggle_img_search">
+          </a>
+       </li>
+       <li class="nav-item">
+          <a href="" class="nav-link " id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="assets/images/notification.svg" class="toggle_img_notification">
+          </a>
+       </li>
+       <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle"  id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="img-profile rounded-circle" src="assets/images/profile.svg">
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+             <a class="dropdown-item" href="#">
+             <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+             Profile
+             </a>
+             <a class="dropdown-item" href="#">
+             <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+             Settings
+             </a>
+             <a class="dropdown-item" href="#">
+             <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+             Activity Log
+             </a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item"  (click)="logout()" style="cursor:pointer">
+             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+             Logout
+             </a>
+          </div>
+       </li>
+    </ul>
+ </nav>

@@ -1,0 +1,108 @@
+
+
+  <div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Room Detail </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="availavilitiesForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Room</label>
+                    <select class="form-control" formControlName="RoomId"
+                        [ngClass]="{ 'is-invalid': submitted && f.RoomId.errors }"
+                            placeholder="Country" id="formrow-FirstRoomId" (change)="onselect($event, 'room')">
+                        <option value="">please select </option>
+                        <option value="{{item.rmId}}" *ngFor="let item of roomList">{{item.roomName}}</option>
+                        </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.RoomId.errors && (submitted)">
+                        <div *ngIf="f.RoomId.errors.required"> Room  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="formrow-firstname">Room</label>
+                        <select class="form-control" formControlName="SpaId"
+                            [ngClass]="{ 'is-invalid': submitted && f.SpaId.errors }"
+                                placeholder="Country" id="formrow-FirstSpaId" (change)="onselect($event,'spa')">
+                            <option value="">please select </option>
+                            <option value="{{item.id}}" *ngFor="let item of spaList">{{item.spaName}}</option>
+                            </select>
+                        <div class="invalid-feedback"
+                            *ngIf="f.SpaId.errors && (submitted)">
+                            <div *ngIf="f.SpaId.errors.required"> Room  is
+                                required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3 pl-3">
+                    <label class="form-check-label" for="exampleCheck1">Table Sku ID</label>
+                    <input type="text" class="form-control" formControlName="Table_Sku_Id"
+                     [ngClass]="{ 'is-invalid': submitted && f.Table_Sku_Id.errors }"
+                         placeholder="Employee Type" id="formrow-FirstTable_Sku_Id">
+                     <div class="invalid-feedback"
+                         *ngIf="f.Table_Sku_Id.errors && (submitted)">
+                         <div *ngIf="f.Table_Sku_Id.errors.required"> Table Sku ID is
+                             required</div>
+                     </div>
+                   
+                </div>
+            </div>
+          
+        </div>
+       
+     
+        <!-- <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1">From Time</label>
+                    <input type="time" class="form-control" formControlName="FromTime"
+                     [ngClass]="{ 'is-invalid': submitted && f.FromTime.errors }"
+                         placeholder="Employee Type" id="formrow-FirstFromTime">
+                     <div class="invalid-feedback"
+                         *ngIf="f.FromTime.errors && (submitted)">
+                         <div *ngIf="f.FromTime.errors.required"> From time  is
+                             required</div>
+                     </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="formrow-firstname">To Time</label>
+                      <input type="time" class="form-control" formControlName="ToTime"
+                    [ngClass]="{ 'is-invalid': submitted && f.ToTime.errors }"
+                        placeholder="Employee Type" id="formrow-FirstToTime">
+                    <div class="invalid-feedback"
+                        *ngIf="f.ToTime.errors && (submitted)">
+                        <div *ngIf="f.ToTime.errors.required"> To Time leave is
+                            required</div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div> -->
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

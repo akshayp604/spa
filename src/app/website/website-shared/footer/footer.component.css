@@ -1,0 +1,59 @@
+.footer-white {
+    border-top: 0 solid #e0e0e0;
+}
+.footer-white .footer-top {
+    background: #fff9ff url(/assets/img/bg8.jpg) no-repeat top;
+    background-size: 100%;
+    padding: 80px 0 20px;
+}
+.footer-white h6 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #000;
+}
+.footer-white .widget_services ul {
+    padding: 0;
+}
+.footer-white .widget_services ul li {
+    padding-bottom: 18px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid rgba(102, 102, 102, .11);
+    position: relative;
+    padding: 10px 10px 10px 15px;
+    margin-bottom: 0;
+    line-height: 20px;
+}
+.footer-white .widget_services ul li:before {
+    content: "\f105";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    font-family: FontAwesome;
+}
+.footer-white .widget_services ul li:before a {
+    color: #000;
+}
+.footer-white .widget_getintuch ul {
+    padding: 0;
+}
+.footer-white .widget_getintuch ul li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 40px;
+}
+.footer-white .widget_getintuch ul li i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    text-align: center;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.footer-white .footer-bottom {
+    background-color: #f9e8f9;
+}

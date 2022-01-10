@@ -1,0 +1,147 @@
+
+
+  <div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Availability </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="availavilitiesForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">User</label>
+                    <select class="form-control" formControlName="UserEmployeeId"
+                        [ngClass]="{ 'is-invalid': submitted && f.UserEmployeeId.errors }"
+                            placeholder="Country" id="formrow-FirstUserEmployeeId" (change)="onselect($event)">
+                        <option value="">please select </option>
+                        <option value="{{item.umId}}" *ngFor="let item of userlist">{{item.firstName}}</option>
+                        </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.UserEmployeeId.errors && (submitted)">
+                        <div *ngIf="f.UserEmployeeId.errors.required"> User is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1">Upcoming Date</label>
+                    <input type="date" class="form-control" formControlName="UpcomingDate"
+                    value="{{ detail?.upcomingDate | date:'dd/mm/yyyy' }}"  [min]='minDate' [max]='date'
+                     [ngClass]="{ 'is-invalid': submitted && f.UpcomingDate.errors }"
+                         placeholder="" id="formrow-FirstUpcomingDate">
+                     <div class="invalid-feedback"
+                         *ngIf="f.UpcomingDate.errors && (submitted)">
+                         <div *ngIf="f.UpcomingDate.errors.required"> Upcoming Date is
+                             required</div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3 pl-3">
+                    <!-- <div class="form-check"> -->
+                        <input type="checkbox"  formControlName="IsAvailable" (change)="onChangeValue($event)"
+                            class="custom-control-input"
+                            id="customCheck1">
+                        <label class="custom-control-label"
+                            for="customCheck1">
+                            Is Available
+                        </label>
+                        <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                        >
+                        <label class="form-check-label" for="exampleCheck1"></label> -->
+                      <!-- </div> -->
+                   
+                </div>
+            </div>
+          
+        </div>
+       
+        <div class="row" *ngIf="availavilitiesForm.value.IsAvailable">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <!-- <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1"formControlName="ReasonForleave"
+                        >
+                    </div> -->
+                    <label class="form-check-label" for="exampleCheck1">From date</label>
+                   <input type="datetime-local" class="form-control" formControlName="FromDate"
+                   value="{{ detail?.fromDate | date:'dd/mm/yyyy' }}"
+                    [ngClass]="{ 'is-invalid': submitted && f.FromDate.errors }"
+                        placeholder="Employee Type" id="formrow-FirstFromDate">
+                    <div class="invalid-feedback"
+                        *ngIf="f.FromDate.errors && (submitted)">
+                        <div *ngIf="f.FromDate.errors.required"> From date  is
+                            required</div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1"formControlName="ReasonForleave"
+                            >
+                        </div> -->
+                        <label class="form-check-label" for="toDate">To date</label>
+                         <input type="datetime-local" class="form-control" formControlName="ToDate"
+                         [value]="detail?.toDate | date:'yyyy-mm-dd' "
+                        [ngClass]="{ 'is-invalid': submitted && f.ToDate.errors }"
+                            placeholder="" id="formrow-FirstToDate">
+                        <div class="invalid-feedback"
+                            *ngIf="f.ToDate.errors && (submitted)">
+                            <div *ngIf="f.ToDate.errors.required"> To date is
+                                required</div>
+                        </div>
+     
+                        </div>
+                    
+                    
+                </div>
+        </div>
+        <!-- <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1">From Time</label>
+                    <input type="time" class="form-control" formControlName="FromTime"
+                     [ngClass]="{ 'is-invalid': submitted && f.FromTime.errors }"
+                         placeholder="Employee Type" id="formrow-FirstFromTime">
+                     <div class="invalid-feedback"
+                         *ngIf="f.FromTime.errors && (submitted)">
+                         <div *ngIf="f.FromTime.errors.required"> From time  is
+                             required</div>
+                     </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="formrow-firstname">To Time</label>
+                      <input type="time" class="form-control" formControlName="ToTime"
+                    [ngClass]="{ 'is-invalid': submitted && f.ToTime.errors }"
+                        placeholder="Employee Type" id="formrow-FirstToTime">
+                    <div class="invalid-feedback"
+                        *ngIf="f.ToTime.errors && (submitted)">
+                        <div *ngIf="f.ToTime.errors.required"> To Time leave is
+                            required</div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div> -->
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

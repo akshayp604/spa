@@ -1,0 +1,73 @@
+<div class="top-bar">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-lg-6">
+				<div class="top-left">
+					<ul>
+						<li><i class="fa fa-phone pr-1"></i> <a href="javascript:void(0)">+123 456 7890</a></li>
+						<li><i class="fa fa-envelope-o pr-2"></i> <a href="javascript:void(0)">info@site.com</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-lg-6">
+				<div class="top-right">
+					<ul class="social-media">
+						<li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+
+						<li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- header navigation -->
+<header class="sticky spaheader shadow">
+	<div class="container">
+		<nav class="navbar navbar-expand-xl custom-navbar">
+			<a [routerLink]="'/'" class="logo_txt mb-0"> Spa <span class="haviland">&</span> Salon</a>
+
+			<!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+			<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+				<i class="fa fa-bars"></i>
+			</button>
+
+			<!-- Step 2: Add the ngbCollapse directive to the element below. -->
+			<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<!-- Step 4: Close the menu when a link is clicked. -->
+						<a class="nav-link p-2" [routerLink]="'/'" (click)="isMenuCollapsed = true">Home</a>
+					</li>
+					<!-- <li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/spa-menu']" (click)="isMenuCollapsed = true">Spa
+							Menu</a>
+					</li> -->
+					<li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/book-appointment']"
+							(click)="isMenuCollapsed = true">Booking</a>
+					</li>
+					<!-- <li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/chinese-medicine']"
+							(click)="isMenuCollapsed = true">Chinese Medicine</a>
+					</li> -->
+					<!-- <li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/our-products']" (click)="isMenuCollapsed = true">Our
+							Products</a>
+					</li> -->
+
+					<!-- <li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/about']" (click)="isMenuCollapsed = true">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/contact']" (click)="isMenuCollapsed = true">Contact</a>
+					</li> -->
+					<li class="nav-item">
+						<a class="nav-link p-2" [routerLink]="['/admin']" (click)="isMenuCollapsed = true">Admin</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+<!-- end header -->

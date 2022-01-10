@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Payment modes </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="modeForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Mode </label>
+                    <input type="text" class="form-control" formControlName="Modes"
+                    [ngClass]="{ 'is-invalid': submitted && f.Modes.errors }"
+                        placeholder="Mode" id="formrow-FirstModes">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Modes.errors && (submitted)">
+                        <div *ngIf="f.Modes.errors.required"> Mode is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- <div class="mb-3">
+                    <label for="formrow-firstname">Description</label>
+                    <input type="text" class="form-control" formControlName="Description"
+                    [ngClass]="{ 'is-invalid': submitted && f.Description.errors }"
+                        placeholder="Description" id="formrow-FirstDescription">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Description.errors && (submitted)">
+                        <div *ngIf="f.Description.errors.required"> Description is
+                            required</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+      
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

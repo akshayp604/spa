@@ -1,0 +1,642 @@
+<section class="py-4 bgbox1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="txtHeading text-center mb-3">
+					<h2>SELECT YOUR SERVICES</h2>
+					<img src="assets/img/line1.png" />
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills nav_inner justify-content-center w-100">
+				<li ngbNavItem="top">
+					<a class="btn btn-default m-1 p-2" ngbNavLink>Select your services</a>
+					<ng-template ngbNavContent>
+						<!-- {{subCategoryDetail | json}} -->
+						
+						<div class="bgTran7 card shadow my-3 mt-3">
+							<div class="row mx-0 py-3" *ngIf="subCategoryDetail.length > 0">
+								<!-- <div class="col-md-4 mb-3" *ngFor="let item of subCategoryDetail; let i = 1ndex"> -->
+								<div class="col-md-4 mb-3" *ngFor="let item of subCategoryDetail;let i = index">
+								<!-- <div class="col-md-4 mb-3" > -->
+									<div class="single-blog-item">
+										<div class="img-holder">
+											<img src="{{item.image ? item.image:'assets/img/services/img-01.jpg'}}" alt=" Image">
+											<div class="overlay-style-one"></div>
+											<div class="categories">
+												<a >{{item.Name}}</a>
+											</div>
+										</div>
+										<div class="text-holder">
+											<ul class="list_inner_bdy">
+												<li *ngFor="let child of item['SubCategory'];let j = index">
+													<div class="tab_sec_inner_bdy_inner_sec">
+														<div class="tab_sec_inner_bdy_left">
+															<h5 class="product-service">{{child.Name}}</h5>
+															<span class="price_inner">
+																<span class="time">{{child.Details[0]?.Duration}} Minutes</span>
+																<span class="price"> {{child.Details[0]?.Price | currency}} </span>
+															</span>
+														</div>
+														<div class="tab_sec_inner_bdy_right">
+															<!-- <span class="value_quty">1</span> -->
+															<a class="btn btn_txt px-2" (click)="open(content, child, item)"> <i
+																	class="fa fa-plus"></i></a>
+														</div>
+													</div>
+												</li>
+												<!-- <li>
+													<div class="tab_sec_inner_bdy_inner_sec">
+														<div class="tab_sec_inner_bdy_left">
+															<h5 class="product-service">Eminence Organic Facial</h5>
+															<span class="price_inner">
+																<span class="time">1 hr</span>
+																<span class="price"> $105.00 </span>
+															</span>
+														</div>
+														<div class="tab_sec_inner_bdy_right">
+															<a class="btn btn_txt px-2" (click)="open(content)"> <i
+																	class="fa fa-plus"></i></a>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="tab_sec_inner_bdy_inner_sec">
+														<div class="tab_sec_inner_bdy_left">
+															<h5 class="product-service">Eminence Organic Facial</h5>
+															<span class="price_inner">
+																<span class="time">1 hr</span>
+																<span class="price"> $105.00 </span>
+															</span>
+														</div>
+														<div class="tab_sec_inner_bdy_right">
+															<a class="btn btn_txt px-2" (click)="open(content)"> <i
+																	class="fa fa-plus"></i></a>
+														</div>
+													</div>
+												</li> -->
+											</ul>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+						
+						</div>
+						<ng-template #content let-modal>
+							<div class="modal-header py-2">
+								<div class="modal-title" id="modal-basic-title">
+									<h4 class="m-0">You've selected:</h4>
+									<p class="h4 m-0">{{displayName}}</p>
+								</div>
+								<button type="button" class="close" aria-label="Close"
+									(click)="modal.dismiss('Cross click');modelClose()">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form  (submit)="submitForm()" [formGroup]="appointmentform">
+								
+									<div class="col-lg-12" *ngFor="let customer of appointmentform.get('customer').controls;let i = index"
+									[formGroup]="customer">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="form-group mb-2">
+													<label for="inputSPA">First Name</label>
+													<input class="form-select form-control" aria-label="Default select example"
+													formControlName="firstName"
+													[ngClass]="{ 'is-invalid': submitted && pointAt(i).firstName.errors }"
+														placeholder="firstName" id="formrow-Firstname">
+													<div class="invalid-feedback"
+														*ngIf="pointAt(i).firstName.errors && (submitted)">
+														<div *ngIf="pointAt(i).firstName.errors.required">firstName is
+															required</div>
+													</div>
+													<!-- formControlName="first_name"
+                                       [ngClass]="{ 'is-invalid': submitted && pointAt(i).first_name.errors }" /> -->
+													<!-- <div *ngIf="submitted && pointAt(i).first_name.errors"
+                                       class="invalid-feedback alert alert-danger py-1 px-3">
+                                       <div *ngIf="pointAt(i).first_name.errors">first_name is required</div>
+                                       </div> -->
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group mb-2">
+													<label for="inputcenter">Last name</label>
+													<input class="form-select form-control" aria-label="Default select example"
+													formControlName="lastName"
+													[ngClass]="{ 'is-invalid': submitted && pointAt(i).lastName.errors }"
+														placeholder="lastName" id="formrow-lastName">
+													<div class="invalid-feedback"
+														*ngIf="pointAt(i).lastName.errors && (submitted)">
+														<div *ngIf="pointAt(i).lastName.errors.required">lastName is
+															required</div>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group mb-2">
+													<label for="inputSPA">Contact Number</label>
+													<input class="form-select form-control" aria-label="Default select example"
+													formControlName="contactNumber"
+													[ngClass]="{ 'is-invalid': submitted && pointAt(i).contactNumber.errors }"
+														placeholder="contactNumber" id="formrow-contactNumber">
+													<div class="invalid-feedback"
+														*ngIf="pointAt(i).contactNumber.errors && (submitted)">
+														<div *ngIf="pointAt(i).contactNumber.errors.required">Contact Number is
+															required</div>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group mb-2">
+													<label for="inputSPA">Email</label>
+													<input class="form-select form-control" aria-label="Default select example"
+													formControlName="email"
+													[ngClass]="{ 'is-invalid': submitted && pointAt(i).email.errors }"
+														placeholder="email" id="formrow-email">
+													<div class="invalid-feedback"
+														*ngIf="pointAt(i).email.errors && (submitted)">
+														<div *ngIf="pointAt(i).email.errors.required">email is
+															required</div>
+													</div>
+													
+												</div>
+												<!-- <div class="form-group mb-2">
+													<label for="inputSPA">Email</label>
+													<input class="form-select" aria-label="Default select example"
+													formControlName="email"
+													[ngClass]="{ 'is-invalid': submitted && pointAt(i).email.errors }"
+														placeholder="email" id="formrow-email">
+													<div class="invalid-feedback"
+														*ngIf="pointAt(i).email.errors && (submitted)">
+														<div *ngIf="pointAt(i).email.errors.required">email is
+															required</div>
+													</div>
+												</div> -->
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<h6 class="card-title mb-0">
+											<div class="d-flex justify-content-between align-items-center">
+												Additional Reservation's
+												Details
+												<div style="float: right;"><button class="btn btn-success" type="button" (click)="addItem({})">Add</button>
+												</div>
+											</div>
+										</h6>
+										<hr class="mt-0" />
+									</div>
+									<div class="col-md-12 form-group mb-2">
+										<div class="table-responsive-sm">
+											<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th>S.No.</th>
+													<th>Name</th>
+													<th>Therapy Category</th>
+													<th>Therapy Details</th>
+													<th>Price</th>
+													<th>Therapist Preference</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr *ngFor="let customer of appointmentform.get('customer').controls;let i = index"
+												[formGroup]="customer">
+													<td>{{i+1}}</td>
+													<td>
+														<input class="form-control" formControlName="firstName" [value]="customer.value.firstName" />
+													</td>
+													<td>
+														<ng-multiselect-dropdown [placeholder]="'Therapy Detail'"
+															[settings]="dropdownSettings" [data]="categorylist"
+															(onSelect)="selectTherapy($event)"
+															[(ngModel)]="selectedTherapyItems"
+															(onDeSelect)="deSelectTherapy($event)"
+															[ngModelOptions]="{standalone: true}"
+														
+															 >
+														</ng-multiselect-dropdown>
+													</td>
+													<td>
+														<ng-multiselect-dropdown [placeholder]="' Sub Therapy Detail'"
+															[settings]="dropdownSettings1" [data]="filteredcat"
+															(onSelect)="selectSubTherapy($event, customer.value.sucategories,i)"
+															(onDeSelect)="deSelectSubTherapy($event,i)"
+															formControlName="sucategories" >
+														</ng-multiselect-dropdown>
+
+													</td>
+													<td>
+														<input class="form-control" formControlName="price"  />
+													</td>
+													<td>
+														<div class="d-flex">
+															<select class="form-control" formControlName="preference" >
+																<option value="">No Preference</option>
+																<option value="Female">Female</option>
+																<option value="Male">Male</option>
+															</select>
+														</div>
+													</td>
+													<td><button class="btn btn-link px-1" type="button" (click)="remove(i)"  placement="top" [disabled]="i > 0"
+															ngbTooltip="delete"><i
+																class="fa fa-trash text-danger"></i></button></td>
+												</tr>
+											</tbody>
+										</table>
+										</div>
+										
+									</div>
+								</form>
+								<hr>
+								<button class="btn btn-success" (click)="submitForm()">Continue</button>
+							</div>
+						</ng-template>
+					</ng-template>
+				</li>
+				<li ngbNavItem="middle">
+					<a class="btn btn-default m-1 p-2" ngbNavLink>Pick a time</a>
+					<ng-template ngbNavContent>
+						<div class="bgTran7 card shadow my-3 w-100">
+							<div class="row  mx-0 mt-2 py-3">
+								<div class="col-lg-3">
+									<div class="header_side">
+										<div class="header_side_heading">
+											<div class="d-flex align-items-center justify-content-between">
+												<h4 class="mb-0">Your Appointment</h4>
+												<span class="text-muted">35 min</span>
+											</div>
+										</div>
+										<div class="header_side_bdy">
+											<div class="header_inputtxt">
+												<form>
+													<div class="form-group">
+														<input class="form-control txt_inpt_sec"
+															value="Eminence Organic Mini Facial" disabled="">
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<ngb-datepicker (dateSelect)="onDateSelect($event)"
+										class="q-datepicker position-relative w-100 border-0 shadow-sm bg-light" #d>
+									</ngb-datepicker>
+								</div>
+								<div class="col-lg-5">
+									<div class="row">
+										<div class="col-md-12 mb-2">
+											<div class="col-md-12 py-2 border">
+												<h4 class="text-uppercase text-left mb-1">MORNING</h4>
+												<ng-container *ngFor="let item of timeList; let i = index">
+
+													<button *ngIf="item.ismoorning" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
+												</ng-container>
+												<!-- <button class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													type="button">10:30
+													am</button>
+												<button class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													type="button">11:00
+													am</button>
+												<button class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													type="button">11:30
+													am</button> -->
+											</div>
+										</div>
+										<div class="col-md-12 mb-2">
+											<div class="col-md-12 py-2 border">
+												<h4 class="text-uppercase text-left mb-1">afternoon</h4>
+												<ng-container *ngFor="let item of timeList; let i = index">
+
+													<button *ngIf="item.afternoon" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+														(click)="onSelectTime(item)"type="button" > {{item.timeSlot}}</button>
+												</ng-container>
+												
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="col-md-12 py-2 border">
+												<h4 class="text-uppercase text-left mb-1">evening</h4>
+												<ng-container *ngFor="let item of timeList; let i = index">
+
+													<button *ngIf="item.isevening" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
+												</ng-container>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</li>
+				<li ngbNavItem="middle1">
+					<a class="btn btn-default m-1 p-2" ngbNavLink>Pick a Room</a>
+					<ng-template ngbNavContent>
+						<div class="bgTran7 card shadow my-3 w-100">
+							<div class="row  mx-0 mt-2 py-3">
+								<div class="col-lg-3">
+									<div class="header_side">
+										<div class="header_side_heading">
+											<div class="d-flex align-items-center justify-content-between">
+												<h4 class="mb-0">Select SPA</h4>
+											</div>
+										</div>
+										<div class="header_side_bdy">
+											<div class="detail_bdy">
+												<div class="category_sec">
+													<select class="form-control mb-2">
+														<option value=""> Please select SPA </option>
+														<option  *ngFor="let item of spaList" value="{{item.id}}">{{item.spaName}}</option>
+													
+													</select>
+												</div>
+												<div class="d-flex mb-1">
+													<span class="name_slot"> <span class="squar_bdy"><span
+																class="squar_bdy_inn pink"></span></span></span>
+													<span class="name_slot_value fs-12"> Not Available</span>
+												</div>
+												<div class="d-flex mb-1">
+													<span class="name_slot"> <span class="squar_bdy"><span
+																class="squar_bdy_inn grey"></span></span></span>
+													<span class="name_slot_value fs-12"> Available</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-9">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="room_bed_bdy">
+												<h4 class="bed_heading mb-1"> Room 1</h4>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1" type="button">
+													<!-- <i class="fa fa-bed fa-2x"></i> -->
+													<img src="assets/images/spabed.png" alt="" class="spabed-icon">
+												</button>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1" type="button">
+													<img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect available_slot  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="room_bed_bdy">
+												<h4 class="bed_heading mb-1"> Room 2</h4>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect available_slot  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect available_slot  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="room_bed_bdy">
+												<h4 class="bed_heading mb-1"> Room 3</h4>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect available_slot   mb-1"
+													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</li>
+				<!-- <li ngbNavItem="bottom">
+					<a class="btn btn-default m-1 p-2" ngbNavLink>Payment Mode</a>
+					<ng-template ngbNavContent>
+						<div class="bgTran7 card shadow my-3 w-100">
+							<div class="row  mx-0 mt-2 py-3">
+								<div class="col-md-7">
+									<div class="row">
+										<div class="w-100 servicesBoxs">
+											<div class="col-lg-12 mb-2">
+												<div class="card">
+													<div class="p-2 tab_sec_inner_bdy tab_section_header">
+														<div class="tab_sec_inner_bdy_inner_sec">
+															<div class="tab_sec_inner_bdy_left">
+																<h4 class="px-0 mb-0">Eminence Organic Facial</h4>
+																<span class="price_inner">
+																	<span class="time">1 hr</span>
+																	<span class="price"> $105.00 </span>
+																</span>
+															</div>
+															<div class="tab_sec_inner_bdy_right">
+																<a class="btn btn_txt"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+														<div
+															class="tab_sec_desc_bdy d-flex justify-content-between align-items-center flex-wrap">
+															<p class="mb-0"><i class="fa fa-calendar mr-1"
+																	aria-hidden="true"></i><span>Tuesday, Mar 2,
+																	2021</span>
+															</p>
+															<p class="mb-0"><i class="fa fa-clock-o mr-1"
+																	aria-hidden="true"></i><span>Tuesday, Mar 2,
+																	2021</span>
+															</p>
+
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-12 mb-2">
+												<div class="card">
+													<div class="p-2 tab_sec_inner_bdy tab_section_header">
+														<div class="tab_sec_inner_bdy_inner_sec">
+															<div class="tab_sec_inner_bdy_left">
+																<h4 class="px-0 mb-0">Eminence Organic Facial</h4>
+																<span class="price_inner">
+																	<span class="time">1 hr</span>
+																	<span class="price"> $105.00 </span>
+																</span>
+															</div>
+															<div class="tab_sec_inner_bdy_right">
+																<a class="btn btn_txt"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+														<div
+															class="tab_sec_desc_bdy d-flex justify-content-between align-items-center flex-wrap">
+															<p class="mb-0"><i class="fa fa-calendar mr-1"
+																	aria-hidden="true"></i><span>Tuesday, Mar 2,
+																	2021</span>
+															</p>
+															<p class="mb-0"><i class="fa fa-clock-o mr-1"
+																	aria-hidden="true"></i><span>Tuesday, Mar 2,
+																	2021</span>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-12 mb-2">
+											<div
+												class="d-flex flex-wrap align-items-center justify-content-between col-lg-12 py-2 shadow-sm p-2 tab_sec_inner_bdy tab_section_header bg-light">
+												<h4 class="mb-0 px-0">Total Qty: 2</h4>
+												<h4 class="mb-0 px-0">Total Amt: $210.00</h4>
+											</div>
+										</div>
+										<form class="w-100">
+											<div class="col-md-12 form-group">
+												<label class="mb-0">Gift Card Code</label>
+												<div class="input-group mb-3">
+													<input class="form-control pl-0" placeholder="0000-0000-0000-0000">
+													<div class="input-group-prepend">
+														<button class="btn btn_txt py-1" type="button">Apply
+															Code</button>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-12 mb-2">
+												<label>Anything we should know? Add a note</label>
+											</div>
+											<div class="col-lg-12 mb-2">
+												<textarea class="form-control" rows="1"></textarea>
+											</div>
+										</form>
+										<div class="col-lg-12 mt-2 text-center">
+											<button class="btn btn_theme">Continue</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-5">
+									<div class="row">
+										<div class="col-lg-12 mb-2">
+											<div class="card">
+												<div class="tab_section_header">
+													<div class="header_side_heading">
+														<h4>FINISH AND BOOK</h4>
+													</div>
+													<div class="header_side_bdy px-3">
+														<div class="header_inputtxt">
+															<form>
+																<div class="form-group">
+																	<div class="row credit-card-icon-container">
+																		<img src="assets/img/card/amex.svg"
+																			alt="credit card icon"
+																			class="credit-card-icon">
+																		<img src="assets/img/card/visa.svg"
+																			alt="credit card icon"
+																			class="credit-card-icon">
+																		<img src="assets/img/card/mastercard.svg"
+																			alt="credit card icon"
+																			class="credit-card-icon">
+																		<img src="assets/img/card/discover.svg"
+																			alt="credit card icon"
+																			class="credit-card-icon">
+																		<img src="assets/img/card/jcb.svg"
+																			alt="credit card icon"
+																			class="credit-card-icon">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label"
+																		for="cardNumber-field">Credit
+																		card
+																		number</label>
+																	<input placeholder="0000 0000 0000 0000"
+																		id="card-number" class="form-control"
+																		name="CreditCardNumber" autocomplete="cc-number"
+																		type="tel" inputmode="text">
+																</div>
+																<div class="form-group">
+																	<div class="row">
+																		<div class="col-sm-4">
+																			<div id="expirationDate"
+																				class="form-group is-required">
+																				<label class="control-label"
+																					for="expirationDate-field">Expiration</label>
+																				<input placeholder="MM/YYYY"
+																					id="expirationDate-field"
+																					class="expirationDate form-control"
+																					name="cc-exp" autocomplete="cc-exp"
+																					type="tel" inputmode="numeric">
+																			</div>
+																		</div>
+																		<div class="col-sm-4">
+																			<div id="cvc3"
+																				class="cvcField form-group is-required">
+																				<label class="control-label"
+																					for="cvc3-field">Security
+																					code</label>
+																				<input id="card-csc"
+																					class="form-control" name="cc-csc"
+																					integerdigits="4"
+																					autocomplete="cc-csc" type="tel"
+																					inputmode="text">
+																			</div>
+																		</div>
+																		<div class="col-sm-4">
+																			<div id="zip"
+																				class="card-zip-field form-group is-required">
+																				<label class="control-label"
+																					for="zip-field">Postal code</label>
+																				<input id="postal-code"
+																					class="form-control"
+																					name="postal-code"
+																					autocomplete="postal-code"
+																					type="text" inputmode="text">
+																			</div>
+																		</div>
+																	</div>
+																	<div>
+																		<div id="nameOnCard"
+																			class="form-group is-required"
+																			name="nameOnCard" autocomplete="cc-name">
+																			<label class="control-label"
+																				for="nameOnCard-field">Name on
+																				card</label>
+																			<input placeholder="Name on card"
+																				required="" id="nameOnCard-field"
+																				class="form-control" type="text">
+																		</div>
+																	</div>
+																	<div id="accept-cancellation-policy"
+																		class="custom-control custom-checkbox mb-3">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck1">
+																		<label class="custom-control-label"
+																			for="customCheck1">
+																			I agree to the <a href="#">cancellation
+																				policy</a> and to make this my default
+																			card for all digital and in-person payments.
+																		</label>
+																	</div>
+																</div>
+																<div class="col-lg-12 mt-2 text-center">
+																	<button class="btn btn_theme">Continue
+																		Booking</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</li> -->
+			</ul>
+			<div [ngbNavOutlet]="nav"></div>
+		</div>
+	</div>
+</section>

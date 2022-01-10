@@ -1,0 +1,233 @@
+<!-- Hero Slider -->
+<section class="banner_bg">
+    <div class="container">
+       <div class="col-lg-10 m-auto">
+          <div class="banner_description">
+             <h3 class="heroBanFH haviland">Welcome to Lighthouse spa</h3>
+             <h4 class="heroBanTH py-3">You owe yourself this moment. Make an appointment in just a click!</h4>
+             <!-- <a routerLink = "/book-appointment" class="btn btn_theme">
+                <span class="btn_theme_txt">MAKE AN APPOINTMENT</span>
+                </a> -->
+          </div>
+       </div>
+    </div>
+ </section>
+ <section class="tretment_banner">
+    <div class="container">
+       <div class="row bg-white p-2 shadow">
+          <div class="col left p-5">
+             <div class="px-4">
+                <h3>Get your treatment right away!</h3>
+                <p><span style="color: #000000;">Mel solet aliquam ea. No tale adhuc petentium mei</span></p>
+             </div>
+          </div>
+          <div class="right">
+             <a routerLink = "/book-appointment" class="h-100 m-0 row col-md-12 text-white px-3">
+                <div class="p-5">
+                   <i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+                </div>
+             </a>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- End Hero Slider -->
+ <section class="ourservices_sec py-5">
+    <div class="container py-md-5">
+       <div class="row">
+          <div class="col-lg-12 text-center">
+             <div class="txtHeading">
+                <h2 class="text-uppercase">Our services</h2>
+                <img src="assets/img/line1.png">
+                <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-4" *ngFor="let item of subCategoryDetail;let i = index">
+             <!-- {{item |json}} -->
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="{{item.image ? item.image:'assets/img/services/img-01.jpg'}}" alt="image description">
+
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">{{item.Name}}</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>{{item.Discription}}</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!-- <div class="col-lg-4">
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="assets/img/services/img-02.jpg" alt="image description">
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">Aroma therapy</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>Consectetur adipisicing eiusae modeatan tempunt laboreie magna aliqua enimat aditeuis nostrud exercite.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="assets/img/services/img-03.jpg" alt="image description">
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">Ozone Therapy</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>Consectetur adipisicing eiusae modeatan tempunt laboreie magna aliqua enimat aditeuis nostrud exercite.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="assets/img/services/img-04.jpg" alt="image description">
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">Herbal Therapy</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>Consectetur adipisicing eiusae modeatan tempunt laboreie magna aliqua enimat aditeuis nostrud exercite.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="assets/img/services/img-05.jpg" alt="image description">
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">Skin &amp; Nail Care</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>Consectetur adipisicing eiusae modeatan tempunt laboreie magna aliqua enimat aditeuis nostrud exercite.</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="tg-service">
+                <div class="tg-serviceimg">
+                   <img src="assets/img/services/img-06.jpg" alt="image description">
+                </div>
+                <div class="tg-content">
+                   <div class="tg-title">
+                      <h2><a href="javascript:void(0);">Head Massage</a></h2>
+                   </div>
+                   <div class="tg-description">
+                      <p>Consectetur adipisicing eiusae modeatan tempunt laboreie magna aliqua enimat aditeuis nostrud exercite.</p>
+                   </div>
+                </div>
+             </div>
+          </div> -->
+       </div>
+    </div>
+ </section>
+ <section class="howtofind_sec py-5">
+    <div class="container py-md-5">
+       <div class="row">
+          <div class="col-lg-12 text-center">
+             <div class="txtHeading">
+                <h2> HOW TO FIND US</h2>
+                <img src="assets/img/line1.png">
+                <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-6">
+             <div class="map-section">
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Lighthouse%20Spa%2074-5614%20Palani%20Rd%20%232%20United%20States&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" title="Lighthouse Spa 74-5614 Palani Rd #2 United States" aria-label="Lighthouse Spa 74-5614 Palani Rd #2 United States"></iframe>
+             </div>
+          </div>
+          <div class="col-lg-6">
+             <div class="conInfo">
+                <h3 class="conInfoHead">CONTACT</h3>
+                <h4 class="conInfoHead_sec">74-5614 Palani Rd #2, Kailua-Kona, HI 96740</h4>
+                <span class="contact_e">
+                <a href="#">Email: info@site.com</a>
+                </span>
+                <span class="contact_e">
+                <a href="#">Telephone: +1 234 567 8989</a>
+                </span>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- <section class="spa_sec py-5">
+    <div class="container py-md-5">
+       <div class="row">
+          <div class="col-lg-12 text-center">
+             <div class="txtHeading">
+                <h2 class="text-uppercase"> Lighthouse spa</h2>
+                <img src="assets/img/line1.png">
+                <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             </div>
+          </div>
+       </div>
+       <div class="justify-content-center row">
+          <div class="col-lg-6">
+             <div class="spa_container">
+                <div class="dlab-box spa-ser-bx">
+                   <div class="dlab-media">
+                      <a href="#"><img src="assets/img/spa/pic2.jpg" class="img-fluid"></a> 
+                   </div>
+                   <div class="dlab-info">
+                      <div class="dlab-info-bx d-flex flex-wrap align-items-center justify-content-md-between justify-content-center">
+                         <h6 class="dlab-title m-t0 mb-md-0 mb-2"><a href="#">SPECIAL OFFERS</a></h6>
+                         <a href="#" class="btn btn_theme btn_theme_sm">Book Now</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-6">
+             <div class="spa_container">
+                <div class="dlab-box spa-ser-bx">
+                   <div class="dlab-media">
+                      <a href="#"><img src="assets/img/spa/pic4.jpg" class="img-fluid"></a> 
+                   </div>
+                   <div class="dlab-info">
+                      <div class="dlab-info-bx d-flex flex-wrap align-items-center justify-content-md-between justify-content-center">
+                         <h6 class="dlab-title m-t0 mb-md-0 mb-2"><a href="#">GIFT CARDS</a></h6>
+                         <a href="#" class="btn btn_theme btn_theme_sm">Book Now</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-6">
+             <div class="spa_container">
+                <div class="dlab-box spa-ser-bx">
+                   <div class="dlab-media">
+                      <a href="#"><img src="assets/img/spa/pic3.jpg" class="img-fluid"></a> 
+                   </div>
+                   <div class="dlab-info">
+                      <div class="dlab-info-bx d-flex flex-wrap align-items-center justify-content-md-between justify-content-center">
+                         <h6 class="dlab-title m-t0 mb-md-0 mb-2"><a href="#">APPOINTMENT</a></h6>
+                         <a href="#" class="btn btn_theme btn_theme_sm">Book Now</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section> -->

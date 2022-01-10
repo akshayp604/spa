@@ -1,0 +1,13 @@
+select.custom-select {
+    border-width: 0;
+    border-bottom: 1px solid #e8ebf1;
+    font-size: 12px;
+    border-radius: 0;
+    padding-top: 0;
+    padding-left: 0;
+    line-height: normal;
+    height: calc(1.5em + 0.1rem + 5px);
+}
+button.btn.btn_new:hover {
+    color: #fff!important;
+}

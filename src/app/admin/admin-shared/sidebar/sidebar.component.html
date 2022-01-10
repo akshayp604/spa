@@ -1,0 +1,130 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+   <!-- Sidebar Toggler (Sidebar) -->
+   <div class=" d-none d-md-inline tgl_btn">
+      <button class="btn_toggle_new" id="sidebarToggle">
+         <img src="assets/images/menu.svg" class="toggle_img">
+      </button>
+   </div>
+   <!-- Nav Item - Dashboard -->
+   <li class="nav-item">
+      <a class="nav-link" href="javascript:void(0)"  routerLink="/admin/appointment">
+         <img src="assets/images/calender.svg" class="toggle_img">
+         <span class="nav_content">Appointments</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link" href="javascript:void(0)"  routerLink="/admin/therepist">
+         <img src="assets/images/user.svg" class="toggle_img">
+         <span class="nav_content">Therapists</span>
+      </a>
+   </li>
+  <!-- <li class="nav-item sidebar-dropdown">
+        <a class="nav-link" href="javascript:void(0)" (click)="masterToggel = !masterToggel">
+           <img src="assets/images/623163_database_communication_connection_data_internet_icon.svg" class="toggle_img" > 
+        <span class="nav_content">Master <i class="fa fa-angle-down"></i></span>
+        </a>
+        <div class="sidebar-submenu" *ngIf="masterToggel">
+           <ul>
+              <li>
+              <a href="javascript:void(0)" routerLink="/admin/master/spa"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Spa</span>
+
+              </a>
+              </li>
+              <li>
+              <a href="javascript:void(0)" routerLink="/admin/master/room"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Rooms</span>
+
+              </a>
+              </li>
+              <li>
+              <a href="javascript:void(0)" routerLink="/admin/master/category"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Categories</span>
+
+              </a>
+              </li>
+              
+           </ul>
+        </div>
+  </li> -->
+  <li class="nav-item dropdown" id="accordion">
+     <div class="collapsed" data-toggle="collapse" href="#collapseOne">
+         <a class="nav-link" href="javascript:void(0)" >
+        <img src="assets/images/dollar.svg" class="toggle_img">
+        <span class="nav_content">master</span>
+        </a>
+     </div>
+     <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
+       <div class="accordi" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item"routerLink="/admin/master/spa">Spa</a>
+        <a class="dropdown-item" routerLink="/admin/master/room">Room</a>
+        <!-- <a class="dropdown-item" routerLink="/admin/master/category">Category</a> -->
+        <a class="dropdown-item" routerLink="/admin/master/billing">Billing</a>
+        <a class="dropdown-item" routerLink="/admin/master/country">Country</a>
+        <a class="dropdown-item" routerLink="/admin/master/customer">Customer</a>
+        <a class="dropdown-item" routerLink="/admin/master/discount">Discount</a>
+        <a class="dropdown-item" routerLink="/admin/master/employee-type">Employee Type</a>
+        <a class="dropdown-item" routerLink="/admin/master/employeeLeaves">Employee Leaves</a>
+        <a class="dropdown-item" routerLink="/admin/master/insentive">insentive</a>
+        <a class="dropdown-item" routerLink="/admin/master/packageDetail">Package</a>
+        <a class="dropdown-item" routerLink="/admin/master/packageMaster">Package Master</a>
+        <a class="dropdown-item" routerLink="/admin/master/userEmployee"> User Employee</a>
+      <a class="dropdown-item" routerLink="/admin/master/reservationDetail">reservationDetail</a>
+      <a class="dropdown-item" routerLink="/admin/master/reservationmaster">reservationmaster</a>
+      <a class="dropdown-item" routerLink="/admin/master/reservationStatus">reservationStatus</a>
+      <a class="dropdown-item" routerLink="/admin/master/roomAvaliability">Room Avaliability</a>
+      <a class="dropdown-item" routerLink="/admin/master/roomDetail">Room Detail</a>
+      <a class="dropdown-item" routerLink="/admin/master/state">State</a>
+      <a class="dropdown-item" routerLink="/admin/master/therapistAvailability">Therapist Availability</a>
+      <a class="dropdown-item" routerLink="/admin/master/therapist">Therapist </a>
+      <a class="dropdown-item" routerLink="/admin/master/therapistSkills">Therapist Skills </a>
+      <a class="dropdown-item" routerLink="/admin/master/therapyCategory">Therapy Category </a>
+      <a class="dropdown-item" routerLink="/admin/master/therapySubcategory">Therapy Subcategory </a>
+      <a class="dropdown-item" routerLink="/admin/master/timeSlot">TimeSlot </a>
+      <a class="dropdown-item" routerLink="/admin/master/treatmentStatus">Treatment Status </a>
+      <a class="dropdown-item" routerLink="/admin/master/therapySubCategoryDetail">Therapy Sub Category Detail </a>
+     </div>
+     </div>
+  </li>
+ 
+   
+   <!-- <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)"  routerLink="/admin/sales">
+         <img src="assets/images/dollar.svg" class="toggle_img">
+         <span class="nav_content">Sales</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/graph.svg" class="toggle_img">
+         <span class="nav_content">Analytics</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/giftcard.svg" class="toggle_img">
+         <span class="nav_content">Gift Certificate</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/customer.svg" class="toggle_img">
+         <span class="nav_content">Customers</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/product.svg" class="toggle_img">
+         <span class="nav_content">Products</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/chat.svg" class="toggle_img">
+         <span class="nav_content">Communication</span>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link"  href="javascript:void(0)">
+         <img src="assets/images/setting.svg" class="toggle_img">
+         <span class="nav_content">Settings</span>
+      </a>
+   </li> -->
+</ul>

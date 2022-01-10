@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Discount </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="discountForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Discount Code</label>
+                    <input type="text" class="form-control" formControlName="DiscountCode"
+                    [ngClass]="{ 'is-invalid': submitted && f.DiscountCode.errors }"
+                        placeholder="Discount Code" id="formrow-FirstDiscountCode">
+                    <div class="invalid-feedback"
+                        *ngIf="f.DiscountCode.errors && (submitted)">
+                        <div *ngIf="f.DiscountCode.errors.required"> Discount Code is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Discount Percent</label>
+                    <input type="number" class="form-control" formControlName="DiscountPercent" min="1"
+                    [ngClass]="{ 'is-invalid': submitted && f.DiscountPercent.errors }"
+                        placeholder="Discount Code" id="formrow-FirstDiscountPercent">
+                    <div class="invalid-feedback"
+                        *ngIf="f.DiscountPercent.errors && (submitted)">
+                        <div *ngIf="f.DiscountPercent.errors.required"> Discount Percent is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            
+        </div>
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

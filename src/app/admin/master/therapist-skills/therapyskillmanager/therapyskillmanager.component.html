@@ -1,0 +1,129 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Therapy Skills </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="skillForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Therapiest Name </label>
+                    <select class="custom-select" id="inputGroupSelect01"
+                    formControlName="TmId"
+                     [ngClass]="{ 'is-invalid': submitted && f.TmId.errors }" 
+                     (change)="onchnage($event, 'user')">
+                        <option value="">select Therapiest...</option>
+                        <option value="{{item.tmId}}" *ngFor="let item of usremp">{{item.userTherapistName}}</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.TmId.errors && (submitted)">
+                        <div *ngIf="f.TmId.errors.required"> User Therapiest Name  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Category </label>
+                    <select class="custom-select" id="inputGroupSelect01"
+                    formControlName="TherapyCategoryId"
+                     [ngClass]="{ 'is-invalid': submitted && f.TherapyCategoryId.errors }" 
+                     (change)="onchnage($event, 'category')">
+                        <option value="">select Categry...</option>
+                        <option value="{{item.id}}" *ngFor="let item of category">{{item.name}}</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.TherapyCategoryId.errors && (submitted)">
+                        <div *ngIf="f.TherapyCategoryId.errors.required"> Category  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Sub Category </label>
+                    <select class="custom-select" id="inputGroupSelect01"
+                    formControlName="TherapySubCategoryId"
+                     [ngClass]="{ 'is-invalid': submitted && f.TherapySubCategoryId.errors }" 
+                     (change)="onchnage($event, 'subcategory')">
+                        <option value="">select Sub Categry...</option>
+                        <option value="{{item.id}}" *ngFor="let item of subcategory">{{item.name}}</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.TherapySubCategoryId.errors && (submitted)">
+                        <div *ngIf="f.TherapySubCategoryId.errors.required"> Sub Category  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-Surname">Spa</label>
+                    <select class="custom-select" id="inputGroupSelect01"
+                    formControlName="SpaId" (change)="onchnage($event, 'spa')"
+                     [ngClass]="{ 'is-invalid': submitted && f.SpaId.errors }" >
+                        <option value="">select Spa...</option>
+                        <option value="{{item.id}}" *ngFor="let item of spaList">{{item.spaName}}</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.SpaId.errors && (submitted)">
+                        <div *ngIf="f.SpaId.errors.required"> Spa is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Description </label>
+                    <input type="text" class="form-control" formControlName="Description"
+                    [ngClass]="{ 'is-invalid': submitted && f.Description.errors }"
+                        placeholder="Description" id="formrow-FirstDescription">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Description.errors && (submitted)">
+                        <div *ngIf="f.Description.errors.required"> Description  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <input type="checkbox"  formControlName="IsBest"
+                    class="custom-control-input"
+                    id="customCheck1">
+                <label class="custom-control-label"
+                    for="customCheck1">
+                    Is best
+                </label>
+                </div>
+            </div>
+          
+        </div>
+      
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

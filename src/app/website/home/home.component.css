@@ -1,0 +1,170 @@
+.banner_bg {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 100%), url(/assets/img/bg1.jpg) left center no-repeat;
+    background-size: auto;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    min-height: 80vh;
+    position: relative;
+}
+.banner_bg .banner_description {
+    margin-bottom: 0px;
+    padding: 247px 0px 180px 0px;
+    text-align: center;
+}
+.banner_bg .banner_description h3 {
+   /*font-size: 4.5rem;
+   */
+    min-height: 0px;
+    max-height: none;
+    opacity: 1;
+    color: #fff;
+    color: #fff;
+    font-size: 40px;
+    line-height: 85px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 7px;
+    font-family: Montserrat;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.banner_bg .banner_description h4 {
+    color: #ff5ea5;
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    letter-spacing: 5px;
+}
+.tg-service {
+    width: 100%;
+    padding: 20px 0;
+}
+.tg-service:hover .tg-serviceimg img {
+    border-color: #fff;
+    -webkit-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.15);
+}
+.tg-service .tg-serviceimg {
+    margin: 0;
+    width: 100%;
+}
+.tg-service .tg-serviceimg img {
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
+    border: 10px solid transparent;
+}
+.tg-service .tg-content {
+    width: 100%;
+    text-align: center;
+    padding: 30px 10px 0;
+}
+.tg-service .tg-content .tg-title {
+    width: 100%;
+    padding: 0 0 20px;
+}
+.tg-service .tg-content .tg-title h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 300;
+}
+.tg-service .tg-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 24px;
+}
+.howtofind_sec {
+    background: #fef7fe url(/assets/img/bg5.jpg) bottom no-repeat;
+    background-size: 100%;
+}
+.howtofind_sec .map-section iframe {
+    width: 100%;
+    min-height: 400px;
+}
+.howtofind_sec .conInfo {
+    text-align: center;
+}
+.howtofind_sec .conInfo h3 {
+    font-size: 30px;
+}
+.howtofind_sec .conInfo h4 {
+    color: #000;
+}
+.howtofind_sec .conInfo .contact_e {
+    display: block;
+    color: #000;
+}
+.howtofind_sec .conInfo .contact_e a {
+    color: #000;
+    font-size: 20px;
+}
+.spa_sec {
+    background: #fff url(/assets/img/bg6.jpg) bottom no-repeat;
+    background-size: 100%;
+}
+.spa_sec .spa_container {
+    margin-bottom: 30px;
+}
+.spa_sec .spa_container .dlab-box {
+    position: relative;
+}
+.spa_sec .spa_container .dlab-box .dlab-media {
+    overflow: visible;
+    position: relative;
+    text-align: center;
+}
+.spa_sec .spa_container .dlab-box .dlab-media a {
+    display: block;
+    position: relative;
+}
+.spa_sec .spa_container .dlab-box .dlab-info {
+    position: relative;
+}
+.spa_sec .spa_container .dlab-box .dlab-info .dlab-info-bx {
+    padding: 15px 30px;
+}
+.spa_sec .spa_container .dlab-box .dlab-info .dlab-info-bx .dlab-title {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+@media (max-width: 767px) {
+    .banner_bg .banner_description {
+        padding: 27px 0px 50px 0px;
+   }
+    .banner_bg .banner_description h3 {
+        font-size: 1.5rem;
+        line-height: normal;
+   }
+    .banner_bg .banner_description h4 {
+        line-height: 1em;
+        letter-spacing: 3px;
+   }
+    .banner_bg {
+        min-height: 73vh;
+   }
+    .right {
+        width: 100%;
+        text-align: center;
+   }
+}
+section.tretment_banner h3 {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+.col.left {
+    background: #fde4e9;
+}
+.right {
+    background: #f8b1b0;
+    color: #fff;
+}
+section.tretment_banner {
+    margin-top: -100px;
+    z-index: 1;
+    position: relative;
+}

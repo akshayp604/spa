@@ -1,0 +1,107 @@
+
+
+  <div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Availability </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="availavilitiesForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Room</label>
+                    <select class="form-control" formControlName="RoomId"
+                        [ngClass]="{ 'is-invalid': submitted && f.RoomId.errors }"
+                            placeholder="Country" id="formrow-FirstRoomId" (change)="onselect($event)">
+                        <option value="">please select </option>
+                        <option value="{{item.rmId}}" *ngFor="let item of roomList">{{item.roomName}}</option>
+                        </select>
+                    <div class="invalid-feedback"
+                        *ngIf="f.RoomId.errors && (submitted)">
+                        <div *ngIf="f.RoomId.errors.required"> Room  is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1"> Date</label>
+                    <input type="date" class="form-control" formControlName="Date"
+                    value="{{ detail?.date | date:'dd/mm/yyyy' }}"  [min]='minDate' [max]='date'
+                     [ngClass]="{ 'is-invalid': submitted && f.Date.errors }"
+                         placeholder="" id="formrow-FirstDate">
+                     <div class="invalid-feedback"
+                         *ngIf="f.Date.errors && (submitted)">
+                         <div *ngIf="f.Date.errors.required">  Date is
+                             required</div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3 pl-3">
+                    <!-- <div class="form-check"> -->
+                        <input type="checkbox"  formControlName="IsAvailable" 
+                            class="custom-control-input"
+                            id="customCheck1">
+                        <label class="custom-control-label"
+                            for="customCheck1">
+                            Is Available
+                        </label>
+                        <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                        >
+                        <label class="form-check-label" for="exampleCheck1"></label> -->
+                      <!-- </div> -->
+                   
+                </div>
+            </div>
+          
+        </div>
+       
+     
+        <!-- <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1">From Time</label>
+                    <input type="time" class="form-control" formControlName="FromTime"
+                     [ngClass]="{ 'is-invalid': submitted && f.FromTime.errors }"
+                         placeholder="Employee Type" id="formrow-FirstFromTime">
+                     <div class="invalid-feedback"
+                         *ngIf="f.FromTime.errors && (submitted)">
+                         <div *ngIf="f.FromTime.errors.required"> From time  is
+                             required</div>
+                     </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="formrow-firstname">To Time</label>
+                      <input type="time" class="form-control" formControlName="ToTime"
+                    [ngClass]="{ 'is-invalid': submitted && f.ToTime.errors }"
+                        placeholder="Employee Type" id="formrow-FirstToTime">
+                    <div class="invalid-feedback"
+                        *ngIf="f.ToTime.errors && (submitted)">
+                        <div *ngIf="f.ToTime.errors.required"> To Time leave is
+                            required</div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div> -->
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

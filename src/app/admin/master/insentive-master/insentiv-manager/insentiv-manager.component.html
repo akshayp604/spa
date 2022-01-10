@@ -1,0 +1,86 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Insentive </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="insentiveForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Name</label>
+                    <input type="text" class="form-control" formControlName="Name"
+                    [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+                        placeholder="Name" id="formrow-FirstName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Name.errors && (submitted)">
+                        <div *ngIf="f.Name.errors.required"> Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Insentive Percentage</label>
+                    <input type="number" class="form-control" formControlName="Insentive_Percentage" min="1"
+                    [ngClass]="{ 'is-invalid': submitted && f.Insentive_Percentage.errors }"
+                        placeholder="Insentive Percentage" id="formrow-FirstInsentive_Percentage">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Insentive_Percentage.errors && (submitted)">
+                        <div *ngIf="f.Insentive_Percentage.errors.required"> Insentive Percentage is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+           
+    
+    
+            
+        </div>
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Insentive Category</label>
+                    <input type="text" class="form-control" formControlName="Insentive_Category"
+                    [ngClass]="{ 'is-invalid': submitted && f.Insentive_Category.errors }"
+                        placeholder="Insentive Category" id="formrow-FirstInsentive_Category">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Insentive_Category.errors && (submitted)">
+                        <div *ngIf="f.Insentive_Category.errors.required"> Insentive Category is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Insentive Percentage</label>
+                    <input type="number" class="form-control" formControlName="Insentive_Percentage" min="1"
+                    [ngClass]="{ 'is-invalid': submitted && f.Insentive_Percentage.errors }"
+                        placeholder="Employee Type" id="formrow-FirstInsentive_Percentage">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Insentive_Percentage.errors && (submitted)">
+                        <div *ngIf="f.Insentive_Percentage.errors.required"> Insentive Percentage is
+                            required</div>
+                    </div>
+                </div>
+            </div> -->
+           
+    
+    
+            
+        </div>
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

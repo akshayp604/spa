@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Employee Type </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="empTypeForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Employee Type</label>
+                    <input type="text" class="form-control" formControlName="Name"
+                    [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+                        placeholder="Employee Type" id="formrow-FirstName">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Name.errors && (submitted)">
+                        <div *ngIf="f.Name.errors.required"> Employee Type Code is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+           
+    
+    
+            
+        </div>
+       
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

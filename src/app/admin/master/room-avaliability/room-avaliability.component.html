@@ -1,0 +1,185 @@
+<div class="mid_sec_bdy">
+
+    <div class="tab-content" id="pills-tabContent">
+       <div class="tab-pane fade show active" id="pills-sales" role="tabpanel"
+          aria-labelledby="pills-saleschart-tab">
+          <div class="row mx-0 row-mob">
+             <div class="col-md-12 p-0 bg-grey">
+                <div class="row mx-0 pt-3 pb-3">
+                   <div class="col-lg-9 col-md-8 col-sm-12">
+                      <div class="colum_left_bdy">
+                         
+                         <!-- <div class="custom_select_in ml-md-3 searchui">
+                            <form class="form-inline">
+                               <img src="assets/images/search.png" class="dropdown_img">
+                               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                             </form>
+                         </div> -->
+                      </div>
+                   </div>
+                   <div class="col-lg-3 col-md-4 col-sm-12 text-right">
+                      <div class="custom_btn_in mr-md-3 btn-export">
+                          <button type="button" class="btn btn_new" (click)="onclick(null,'Add')"> 
+                            <span class="icon_custome">
+                               <i class="fa fa-plus"></i>
+                            </span>
+                              Add Availability </button>
+                         <!-- <select class="custom_select_bx s_select">
+                            <option>Export</option>
+                            <option>PDF</option>
+                            <option>Excel</option>
+                            <option>CSV</option>
+                            <option>Sheets</option>
+                         </select>
+                         <img src="assets/images/export.svg" class="dropdown_img"> -->
+                      </div>
+                   </div>
+                   <!-- <div class="col-lg-3 col-md-4 col-sm-12 text-right">
+                      <div class="custom_btn_in mr-md-3 btn-export">
+                         <select class="custom_select_bx s_select">
+                            <option>Export</option>
+                            <option>PDF</option>
+                            <option>Excel</option>
+                            <option>CSV</option>
+                            <option>Sheets</option>
+                         </select>
+                         <img src="assets/images/export.svg" class="dropdown_img">
+                      </div>
+                   </div> -->
+                </div>
+             </div>   
+
+             <div class="col-md-12 p-0">
+                <div class="row mx-0 pt-0 pb-0">
+                   <!-- table start -->
+                   <div class="col-lg-12 p-0">
+                      <div class="table-responsive sales-main">
+                         <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID #</th>
+                                <th scope="col"> Room Name</th>
+                                <th scope="col">  Date</th>
+                                <th scope="col"> IS Available</th>
+                             
+                                <th scope="col">Active</th>
+                                <th scope="col">Created date</th>
+                                
+                                <th scope="col">Action</th>
+                              
+                              </tr>
+                            </thead>
+                              <tbody *ngIf="list"> 
+                                 <tr *ngFor="let item of list; let i = index">
+                                   <th scope="row"><a href="javascript:void(0)">{{item.id}}</a></th>
+                                   <td>{{item.roomName}}</td>
+                                   <td>{{item.date | date}}</td>
+                                   <td>{{item.isAvailable }}</td>
+                        
+                                   
+                                   <td>{{item.isActive?'Yes':'No'}}</td>
+                                   <td>{{item.createDate | date}}</td>
+                                   <td>
+                                       <span class="icon_custome">
+                                           <a href="javascript:void(0)" (click)="onclick(item,'Edit')"><i class="fa fa-pencil"></i></a>
+                                       </span>
+                                       <span >
+                                           <a href="javascript:void(0)"  data-toggle="modal" data-target="#staticBackdrop" (click)="selected = item"><i class="fa fa-trash"></i></a>
+                                       </span>
+                                   </td>
+                                 
+                                 </tr>
+                                 
+                                 
+                               </tbody>
+                            
+                        
+                          </table>
+                      </div>
+                   </div>
+                </div>
+
+             </div>
+          </div>
+       </div>
+       <div class="tab-pane fade show" id="pills-workinghrs" role="tabpanel"
+          aria-labelledby="pills-workinghrs-tab">
+          <div class="row mx-0 row-mob">
+             <div class="col p-0">
+                <div class="row mx-0 pt-3">
+                   <div class="col-lg-4">
+                      <div class="colum_left_bdy">
+                         <div class="custom_select_in ">
+                            <select class="custom_select_bx f_select">
+                               <option>All Spas</option>
+                            </select>
+                            <img src="assets/images/dropdown.svg" class="dropdown_img">
+                         </div>
+                         <div class="custom_select_in ml-md-3">
+                            <select class="custom_select_bx s_select">
+                               <option>All Staff</option>
+                            </select>
+                            <img src="assets/images/dropdown.svg" class="dropdown_img">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-lg-4">
+                      <div class="mid_button_group_bdy">
+                         <div class="btn-group btn_ctm_group" role="group">
+                            <button type="button" class="btn btn_ctom angle_left_btn"><i
+                                  class="fa fa-angle-left"></i></button>
+                            <button type="button" class="btn btn_ctom">Today</button>
+                            <button type="button" class="btn btn_ctom">23 - 29 May, 2021</button>
+                            <button type="button" class="btn btn_ctom angle_right_btn"><i
+                                  class="fa fa-angle-right"></i></button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+
+                <div class="row mx-0 pt-4 fpt-4">
+                   <!-- table start -->
+                   <div class="col-lg-12 p-0">
+                      <!-- Calander here -->
+                      <div class="workinghrs-image">
+                         <img src="assets/images/calimg.png" alt="" class="w-100" data-toggle="modal"
+                            data-toggle="modal" data-target="#workinghrs-popover">
+                      </div>
+
+
+
+                   </div>
+                </div>
+
+             </div>
+          </div>
+       </div>
+
+    </div>
+
+ </div>
+
+ <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#staticBackdrop">
+    
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content" *ngIf="selected">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Delete {{selected.status}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure to delete this {{selected.userTherapistName}}, this action can not be reverted.
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="close-pop" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,431 @@
+.menu_list_bdy ul{
+	padding: 0px;
+}
+.menu_list_bdy ul > li{
+    
+        display: inline-block;
+    line-height: 1.8;
+    position: relative;
+}
+.menu_list_bdy ul > li:nth-child(1n+2) {
+    margin-left: 19px;
+        display: inline-block;
+    line-height: 1.8;
+    position: relative;
+}
+.menu_list_bdy ul >li:nth-child(1n+2):before{
+	content: "•";
+    display: block;
+    left: -14px;
+    position: absolute;
+    top: 0;
+}
+
+.tab_section_inner {
+    border: 1px solid #CCD1D9;
+    border-radius: 3px;
+    margin-bottom: 34px;
+}
+
+.tab_section_header {
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    border: 1px solid #CCD1D9;
+    display: block;
+    padding: 0;
+    margin: 0 -1px;
+    border-top: 1px solid #f48380;
+    border-width: 4px 0px 1px 0;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tab_section_header h4 {
+   
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 0px;
+}
+.tab_sec_container{
+	padding-left: 16px;
+    padding-right: 16px;
+}
+.tab_sec_inner_bdy {
+    
+      padding: 30px 0px;
+}
+
+span.value_quty {
+    min-width: 68px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+
+}
+span.price_inner {
+    color: #838b91;
+    font-size: 12px;
+}
+.tab_sec_desc_bdy p {
+    font-size: 12px;
+    line-height: 20px;
+}
+.tab_sec_inner_bdy_left h3 {
+    margin-bottom: 0px;
+}
+.tab_sec_inner_bdy_inner_sec{
+	display: flex;
+    justify-content: space-between;
+}
+span.price{
+	position: relative;
+	margin-left: 10px;
+	content: "·";
+    margin-right: 10px;
+}
+span.price:before{
+	background: #fbfbfb;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: -1px;
+    width: 5px;
+    z-index: -1;
+
+}
+.btn_txt {
+    background: #f48380;
+    color: #fff;
+}
+input.form-control.txt_inpt_sec {
+    position: relative;
+    background: transparent;
+    width: 100%;
+}
+
+button.btn_close_appointment {
+    position: absolute;
+   right: 0px;
+    top: 7px;
+}
+.header_side_bdy {
+    border-top: 1px solid #CCD1D9;
+    clear: both;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+button.btn_close_appointment {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header_inputtxt {
+    position: relative;
+}
+.header_select_sec h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+.menu_list_bdy {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header_side_heading h4 {
+    text-transform: uppercase;
+}
+
+.tab-content {
+    min-width: 100%
+}
+
+.credit-card-icon-container {
+    margin: 0;
+}
+
+.credit-card-icon {
+    height: 24px;
+    margin: 0 16px 8px 0;
+}
+span.squar_bdy {
+    border: 1px solid #ddd;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-right: 5px;
+    line-height: 25px;
+    text-align: center;
+}
+
+span.squar_bdy_inn.pink {
+    background: #f48380;
+    width: 20px;
+    height: 20px;
+    display: block;
+    line-height: 20px;
+    margin: 1px;
+}
+span.squar_bdy_inn.grey {
+    background: #ddd;
+    width: 20px;
+    height: 20px;
+    display: block;
+    line-height: 20px;
+    margin: 1px;
+}
+.btn_multiselect.not_available {
+    background: #ddd;
+    color: #fff;
+    border-color: #ddd;
+}
+
+.btn_multiselect.available_slot {
+    background: #f48380;
+    border-color: #f48380;
+    color: #fff;
+}
+.btn_multiselect.active_slot {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+h3.bed_heading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.room_bed_bdy {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.bgbox1{
+    background: #fef8fc!important;
+}
+/*css start*/
+.single-blog-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    min-height: 453px;
+    border-bottom: 1px solid #f4f4f4;
+    
+}
+.single-blog-item .img-holder{
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.single-blog-item .img-holder img {
+    transform: scale(1.1, 1.1);
+    transition: all 0.5s ease 0s;
+    width: 100%; 
+}
+.servicesBoxs {
+    overflow-y: auto;
+    max-height: 224px;
+}
+.single-blog-item:hover .img-holder .overlay-style-one{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; 
+}
+.single-blog-item .img-holder .overlay-style-one .box .content a i{
+    background: rgba(0, 0, 0, 0.85) none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 3%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    line-height: 42px;
+    transition: all 500ms ease 0s;
+    width: 40px;        
+}
+.single-blog-item .img-holder .overlay-style-one .box .content a:hover i{
+    background: #ffffff;
+    color: #252525;
+}
+
+.single-blog-item:hover .img-holder img {
+    transform: scale(1, 1);
+}
+.single-blog-item .img-holder .categories {
+    background: #f48380;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    transform: translate3d(0px, 0%, 0px);
+    transition: all 500ms ease;
+}
+.single-blog-item:hover .img-holder .categories {
+    transform: translate3d(0px, -60px, 0px);
+}
+.single-blog-item .img-holder .categories a {
+    text-align: center;
+    padding: 6px 0;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    display: block;
+}
+.single-blog-item .text-holder {
+    border: 1px solid #f4f4f4;
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 10px;
+    transition: all 500ms ease;
+   
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #ffffff;
+    z-index: 3;
+    transition: all 500ms ease;
+}
+.single-blog-item:hover .text-holder {
+    bottom: 0;
+    border-bottom: none;
+}
+
+.single-blog-item .text-holder .meta-info {
+    overflow: hidden;
+    padding-top: 25px;
+    text-align: center;
+}
+.single-blog-item .text-holder .meta-info li {
+    display: inline-block;
+    float: none;
+    line-height: 16px;
+    border-right: 1px solid #dfdfdf;
+    padding-right: 10px;
+    margin-right: 5px;
+}
+.single-blog-item .text-holder .meta-info li:last-child{
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+.single-blog-item .text-holder .meta-info li a{
+    color: #888888;
+    font-size: 14px;
+    font-weight: 400;
+}
+.single-blog-item .text-holder .meta-info li a:hover{
+  color: #2acb35;
+}
+
+.single-blog-item .text-holder .blog-title {
+    color: #404040;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 10px 0 10px;
+    display: block;
+    transition: all 500ms ease;
+}
+.single-blog-item .text-holder .blog-title:hover{
+  color: #2acb35;
+}
+.overlay-style-one{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(244, 131, 128, .8);
+    color: #fff;
+    transition: all 500ms ease;
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+.overlay-style-one .box{
+    display: table;
+    height: 100%;
+    width: 100%;    
+}
+.overlay-style-one .box .content{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;    
+}
+ul.list_inner_bdy {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.list_inner_bdy li h3 {
+    font-size: 18px;
+}
+.nav_inner .nav-link{
+    color:#1D201F;
+}
+.nav_inner .nav-link.active , .nav-pills.nav_inner  .show > .nav-link{
+    color:#fff;
+}
+
+.product-service {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 17px;
+    margin-bottom: 0;
+}
+.list_inner_bdy li {
+border-bottom: 1px dotted #f48380;
+    margin-bottom: 10px;
+}
+
+.list_inner_bdy li:last-child {
+border-bottom: 0 dotted #f48380;
+    margin-bottom: 0;
+}
+
+.ngb-dp-weekday small{
+	width: 3rem!important;
+}
+.ngb-dp-day, .ngb-dp-week-number, .ngb-dp-weekday {
+    height: 2rem;
+    width: 3rem!important;
+}
+
+.dropdown-list{
+	width: 200px!important;
+}
+.dropdown-list > ul.item2 {
+    max-height: none !important;
+}
+
+
+.dropdown-list {
+    overflow-y: scroll;
+    height: 130px;
+    font-size: 11px;
+}
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{
+        line-height: 16px;
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 27px!important;
+    height: 38px;
+    right: 1px;
+    top: 0;
+    padding: 3px 4px!important;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .2s;
+}
