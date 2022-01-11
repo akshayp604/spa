@@ -414,7 +414,7 @@ border-bottom: 0 dotted #f48380;
     font-size: 11px;
 }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{
-        line-height: 16px;
+    line-height: 16px;
     display: block;
     position: absolute;
     box-sizing: border-box;
@@ -492,4 +492,9 @@ border-bottom: 0 dotted #f48380;
     height: 8px;
     border-radius: 50%;
     background: white;
+}
+button.btn.btn_booking {
+    background: #f48380;
+    border: none;
+    color:#fff;
 }
