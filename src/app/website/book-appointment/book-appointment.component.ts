@@ -24,6 +24,7 @@ export class BookAppointmentComponent implements OnInit {
 	spaList: any = [];
 	timeList: any = [];
 	roomList: any = [];
+	roomList2: any = [];
 	selectedItems = [];
 	dropdownSettings: any;
 	categorylist: any;
@@ -33,18 +34,34 @@ export class BookAppointmentComponent implements OnInit {
 	submitted:boolean = false;
 	displayName:any
 	selectedTherapyItems:any = []
+	selectedTherapyItems1:any = []
 	deSelectedTherapyItems:any = []
 	tempSelectedTherapyItems:any = []
 	overAllPrice = 0
 	overDeAllPrice = 0
 	temArray:any = []
 	getcategoriesArray: any = []
+	selectedDate:any;
+	selectedTime:any;
+	ngDatevalue:any ={
+		year: new Date().getFullYear(), month: new Date().getMonth()+1, day: new Date().getDate()}
+	minimumDate:any ={
+		year: new Date().getFullYear(), month: new Date().getMonth()+1, day: new Date().getDate()}
+	bookingObj:any = {
+		location:'',
+		roomid:'',
+		spaId:''
+	}
+		
+	
 	constructor(private modalService: NgbModal, private api: ApiService,private fb : FormBuilder) { 
 		this.getcategorylist();
 		this.getSubCategories();
 		this.getTimeSlot();
 		this.getSpa();
+		this.getRoom();
 		this.getSubcatDetail();
+		console.log(this.ngDatevalue)
 	}
 
 	ngOnInit(): void {
@@ -65,11 +82,7 @@ export class BookAppointmentComponent implements OnInit {
 			enableCheckAll: false
 		};
 	
-		this.appointmentform = this.fb.group({
-			Selectcategories: ["",Validators.required],
-			customer: this.fb.array([  ])
-		  });
-		  this.addItem({})
+	
 	}
 	get f() { return this.appointmentform.controls; }
 	addItem(data:any={}): void {
@@ -87,7 +100,8 @@ export class BookAppointmentComponent implements OnInit {
 		  lastName: data&&data.lastName?data.lastName:'',
 		  contactNumber: data&&data.contactNumber?data.contactNumber:'' ,
 		  email: [data&& data.email ?data.email:'',[Validators.required, Validators.email]],
-		  cateories: [data&&data.cateories?data.cateories:'',Validators.required],
+		  cateories: [this.selectedTherapyItems1
+			,Validators.required],
 		  sucategories: [data&&data.sucategories&& data.sucategories?data.sucategories:'',Validators.required],
 		  // filename: ['',Validators.required],
 		  price: [data&&data.price?data.price:'',Validators.required],
@@ -108,6 +122,8 @@ open(content: any, getname:any, item:any) {
 	console.log(item);
 	this.displayName = getname.Name
 	this.selectTherapy({ id: item.Id, name: item.Name })
+	this.selectedTherapyItems1.push({ id: item.Id, name: item.Name })
+
 	this.modalService.open(content, { size: 'xl' }).result.then((result) => {
 		console.log(result);
 		
@@ -115,6 +131,14 @@ open(content: any, getname:any, item:any) {
 	}, (reason) => {
 		this.closeResult = `Dismissed`;
 	});
+	this.appointmentform = this.fb.group({
+		// Selectcategories: ["",Validators.required],
+		customer: this.fb.array([ ])
+	  });	
+
+	  this.addItem({})
+	// this.selectedTherapyItems
+
 }
 ChangeSortOrder(no: any) {
 	this.slectOne = no
@@ -202,32 +226,22 @@ selectSubTherapy(evt: any, data:any,i:any) {
 	let price = 0;
 	this.getcategoriesArray.map((f:any)=>{
 		if (f.id == evt.id){
-			this.overAllPrice += f.price
+			price += f.price
 		}
 	})
-	console.log(this.overAllPrice);
-	
-	// data.map((f:any) => {
-	// 	let index = this.sucategories.findIndex((x:any) => x.id == f.name)
-	// 	// this.filteredcat = temp.concat(this.filteredcat); 
-	// 	if(index != -1) {
-	// 		console.log(this.sucategories[index].price )
-	// 		price +=  this.sucategories[index].price 
-	// 	}
-	// });
 	this.customer.at(i).patchValue({
-		price: this.overAllPrice
+		price:price
 		})		
 }
 deSelectSubTherapy(evt: any, i:any) {
 	let price = 0;
 	this.getcategoriesArray.map((f: any) => {
 		if (f.id == evt.id) {
-			this.overAllPrice -= f.price
+			price -= f.price
 		}
 	})
 	this.customer.at(i).patchValue({
-		price: this.overAllPrice
+		price: price
 	})
 }
 
@@ -277,38 +291,36 @@ getSpa(){
 		}
 	});
 	}
+getRoom(){
+	this.roomList = undefined;
+	this.api.fetchData('/api/N_RoomMaster/GetAll',{},'GET').subscribe(res => {
+		// console.log(res);
+		this.api.loader('stop');
+		if(res['status'] == 200) {
+		let item = []
+		this.roomList = res['result'];
+		// this.filteredcat = res['result'];
+		}else{
+		this.api.showNotification('error', 'Failed to fetch data.');
+		}
+	});
+	}
 getSubcatDetail(){
 	this.subCategoryDetail = [];
-	// /api/N_TherapySubcategoryDetail/GetAll
 	this.api.fetchData('/api/N_TherapyCategory/GetAllWithSubcategory',{},'GET').subscribe(res => {
 		this.api.loader('stop');
 		if(res['status'] == 200) {
 		let item = []
 		let data = JSON.parse(res['result']);
-		// console.log(data);
 		if( data.length == 1) {
-			// console.log(data[0]);
-			// debugger;
 			this.subCategoryDetail = [];
 			let keys = Object.keys(data[0])
 			if(keys.length > 0) {
 				keys.map((f:any) => {
-					// data[0][f]
-					// console.log(data[0][f])
-					// if(data[0][f]['image']){
-					// }else{
-					// 	data[0][f]['image'] == 'assets/img/services/img-01.jpg'
-
-					// }
 					this.subCategoryDetail.push(data[0][f]);
 				}) 
 			}
-			// console.log( this.subCategoryDetail);
-			// this.subCategoryDetail = JSON.parse(this.subCategoryDetail);
-			// console.log(this.subCategoryDetail)
-
 		}
-		// this.filteredcat = res['result'];
 		}else{
 		this.api.showNotification('error', 'Failed to fetch data.');
 		}
@@ -352,16 +364,30 @@ getTimeSlot(){
 	}
 
 	submitForm(){
-	console.log(this.appointmentform.value)
+	console.log(this.appointmentform.value);
+	document.getElementById('closeModel-res')?.click();
 	}
 	onSelectTime(item:any){
 		console.log(item)
+		this.selectedTime = item
 	}	
 
 	onDateSelect(e:any){
-console.log(e)	}
+		console.log(e);	
+		this.selectedDate = new Date(e.year, e.month-1, e.day)
+		console.log(this.selectedDate);	
+	}
 	modelClose(){
 		this.selectedTherapyItems = []
+	}
+
+	onSelectSpa(event:any){
+	
+		this.roomList2 = this.roomList.filter((f:any) => f.spaId == event.target.value)
+	}
+
+	bookNow(){
+
 	}
 	  
 }

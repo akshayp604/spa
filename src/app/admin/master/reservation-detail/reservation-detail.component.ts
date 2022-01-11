@@ -21,7 +21,7 @@ export class ReservationDetailComponent implements OnInit {
 
   detlist(){
     this.list = undefined;
-    this.api.fetchData('/api/N_ReservationStatus/GetAll',{},'GET').subscribe(res => {
+    this.api.fetchData('/api/N_ReservationDetail/GetAll',{},'GET').subscribe(res => {
       console.log(res);
       this.api.loader('stop');
       if(res['status'] == 200) {
@@ -40,11 +40,11 @@ export class ReservationDetailComponent implements OnInit {
     let data:any =this.api.getAuthDetail()
     let userinfo =  JSON.parse(data.user);
     let obj = {
-      Id:this.selected.id,
+      RMId:this.selected.rmId,
       IsDelete:true,
       DeleteById:userinfo.umId
     }
-    this.api.deleteData('/api/N_ReservationStatus/delete',obj,'DELETE').subscribe(res => {
+    this.api.deleteData('/api/N_ReservationDetail/delete',obj,'DELETE').subscribe(res => {
       console.log(res);
       this.api.loader('stop');
       document.getElementById('close-pop')?.click();

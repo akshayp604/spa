@@ -46,36 +46,7 @@
 														</div>
 													</div>
 												</li>
-												<!-- <li>
-													<div class="tab_sec_inner_bdy_inner_sec">
-														<div class="tab_sec_inner_bdy_left">
-															<h5 class="product-service">Eminence Organic Facial</h5>
-															<span class="price_inner">
-																<span class="time">1 hr</span>
-																<span class="price"> $105.00 </span>
-															</span>
-														</div>
-														<div class="tab_sec_inner_bdy_right">
-															<a class="btn btn_txt px-2" (click)="open(content)"> <i
-																	class="fa fa-plus"></i></a>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="tab_sec_inner_bdy_inner_sec">
-														<div class="tab_sec_inner_bdy_left">
-															<h5 class="product-service">Eminence Organic Facial</h5>
-															<span class="price_inner">
-																<span class="time">1 hr</span>
-																<span class="price"> $105.00 </span>
-															</span>
-														</div>
-														<div class="tab_sec_inner_bdy_right">
-															<a class="btn btn_txt px-2" (click)="open(content)"> <i
-																	class="fa fa-plus"></i></a>
-														</div>
-													</div>
-												</li> -->
+												
 											</ul>
 										</div>
 									</div>
@@ -90,7 +61,7 @@
 									<h4 class="m-0">You've selected:</h4>
 									<p class="h4 m-0">{{displayName}}</p>
 								</div>
-								<button type="button" class="close" aria-label="Close"
+								<button type="button" class="close" aria-label="Close" id="closeModel-res"
 									(click)="modal.dismiss('Cross click');modelClose()">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -216,9 +187,10 @@
 														<ng-multiselect-dropdown [placeholder]="'Therapy Detail'"
 															[settings]="dropdownSettings" [data]="categorylist"
 															(onSelect)="selectTherapy($event)"
-															[(ngModel)]="selectedTherapyItems"
+															
 															(onDeSelect)="deSelectTherapy($event)"
-															[ngModelOptions]="{standalone: true}"
+															
+															formControlName="cateories"
 														
 															 >
 														</ng-multiselect-dropdown>
@@ -244,7 +216,7 @@
 															</select>
 														</div>
 													</td>
-													<td><button class="btn btn-link px-1" type="button" (click)="remove(i)"  placement="top" [disabled]="i > 0"
+													<td><button class="btn btn-link px-1" type="button" (click)="remove(i)"  placement="top" [disabled]="i == 0"
 															ngbTooltip="delete"><i
 																class="fa fa-trash text-danger"></i></button></td>
 												</tr>
@@ -286,7 +258,8 @@
 									</div>
 								</div>
 								<div class="col-lg-4">
-									<ngb-datepicker (dateSelect)="onDateSelect($event)"
+									<!-- https://stackblitz.com/edit/angular-ngbdatepicker?file=app%2Fdatepicker-popup.html -->
+									<ngb-datepicker (dateSelect)="onDateSelect($event)"  [(ngModel)]="ngDatevalue"  [minDate]="minimumDate"
 										class="q-datepicker position-relative w-100 border-0 shadow-sm bg-light" #d>
 									</ngb-datepicker>
 								</div>
@@ -298,6 +271,7 @@
 												<ng-container *ngFor="let item of timeList; let i = index">
 
 													<button *ngIf="item.ismoorning" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
 													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
 												</ng-container>
 												<!-- <button class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
@@ -317,6 +291,7 @@
 												<ng-container *ngFor="let item of timeList; let i = index">
 
 													<button *ngIf="item.afternoon" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
 														(click)="onSelectTime(item)"type="button" > {{item.timeSlot}}</button>
 												</ng-container>
 												
@@ -328,6 +303,7 @@
 												<ng-container *ngFor="let item of timeList; let i = index">
 
 													<button *ngIf="item.isevening" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
 													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
 												</ng-container>
 											</div>
@@ -343,8 +319,37 @@
 					<ng-template ngbNavContent>
 						<div class="bgTran7 card shadow my-3 w-100">
 							<div class="row  mx-0 mt-2 py-3">
+								
+								<div class="col-lg-12">
+									<div class="header_side_heading">
+										<div class="d-flex align-items-center justify-content-between">
+											<h4 class="mb-0">Location of Service/s</h4>
+										</div>
+									</div>
+									<div class="header_side_bdy">
+										<label class="containerradio">In-Spa Services
+										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="spa">
+										  <span class="checkmark"></span>
+										</label>
+										<label class="containerradio">In-Room
+										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="inroom">
+										  <span class="checkmark"></span>
+										</label>
+										<label class="containerradio">On-property Oceanfront Gazebo
+										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="on_property_oceanfront_gazebo">
+										  <span class="checkmark"></span>
+										</label>
+										<label class="containerradio">Private Location
+										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="private_location">
+										  <span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'spa'">
 								<div class="col-lg-3">
 									<div class="header_side">
+										
 										<div class="header_side_heading">
 											<div class="d-flex align-items-center justify-content-between">
 												<h4 class="mb-0">Select SPA</h4>
@@ -353,7 +358,7 @@
 										<div class="header_side_bdy">
 											<div class="detail_bdy">
 												<div class="category_sec">
-													<select class="form-control mb-2">
+													<select class="form-control mb-2" (change)="onSelectSpa($event)">
 														<option value=""> Please select SPA </option>
 														<option  *ngFor="let item of spaList" value="{{item.id}}">{{item.spaName}}</option>
 													
@@ -375,9 +380,9 @@
 								</div>
 								<div class="col-lg-9">
 									<div class="row">
-										<div class="col-md-4">
+										<div class="col-md-4" *ngFor="let item of roomList2">
 											<div class="room_bed_bdy">
-												<h4 class="bed_heading mb-1"> Room 1</h4>
+												<h4 class="bed_heading mb-1"> {{item.roomName}}</h4>
 												<button class="btn btn-block  btn_multiselect not_available  mb-1" type="button">
 													<!-- <i class="fa fa-bed fa-2x"></i> -->
 													<img src="assets/images/spabed.png" alt="" class="spabed-icon">
@@ -388,7 +393,7 @@
 													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
 											</div>
 										</div>
-										<div class="col-md-4">
+										<!-- <div class="col-md-4">
 											<div class="room_bed_bdy">
 												<h4 class="bed_heading mb-1"> Room 2</h4>
 												<button class="btn btn-block  btn_multiselect not_available  mb-1"
@@ -409,9 +414,13 @@
 												<button class="btn btn-block  btn_multiselect available_slot   mb-1"
 													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
+							</div>
+							<div class="row  mx-0 mt-2 py-3">
+								<button class="btn btn-success" (click)="bookNow()">Book Appointment</button>
+
 							</div>
 						</div>
 					</ng-template>
