@@ -418,8 +418,39 @@
 									</div>
 								</div>
 							</div>
+							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'inroom'">
+								<div class="col-lg-6">
+									<div class="form-group mb-2">
+									<label for="inputSPA">Room Number # (if checked-in)</label>
+									<input class="form-select form-control" aria-label="Default select example"	>
+								</div>
+								</div>
+							</div>
+							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'private_location'">
+								<div class="col-lg-6">
+									<div class="form-group mb-2">
+										<label for="inputSPA">Address</label>
+										<input class="form-select form-control" aria-label="Default select example"	>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group mb-2">
+										<label for="inputSPA">city</label>
+										<input class="form-select form-control" aria-label="Default select example"	>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group mb-2">
+										<label for="inputSPA">Postal / Zip Code</label>
+										<input class="form-select form-control" aria-label="Default select example"	>
+									</div>
+								</div>
+							</div>
 							<div class="row  mx-0 mt-2 py-3">
-								<button class="btn btn-success" (click)="bookNow()">Book Appointment</button>
+								<div class="col-lg-12 text-right">
+									<button class="btn btn_booking" (click)="bookNow()">Book Appointment</button>
+								</div>
+								
 
 							</div>
 						</div>
