@@ -40,7 +40,7 @@ export class ReservationDetailComponent implements OnInit {
     let data:any =this.api.getAuthDetail()
     let userinfo =  JSON.parse(data.user);
     let obj = {
-      RMId:this.selected.rmId,
+      RDId:this.selected.rdId,
       IsDelete:true,
       DeleteById:userinfo.umId
     }

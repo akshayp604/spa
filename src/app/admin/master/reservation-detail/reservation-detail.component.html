@@ -19,19 +19,7 @@
                    </div>
                    <div class="col-lg-3 col-md-4 col-sm-12 text-right">
                       <div class="custom_btn_in mr-md-3 btn-export">
-                          <!-- <button type="button" class="btn btn_new" (click)="onclick(null,'Add')"> 
-                            <span class="icon_custome">
-                               <i class="fa fa-plus"></i>
-                            </span>
-                              Add </button> -->
-                         <!-- <select class="custom_select_bx s_select">
-                            <option>Export</option>
-                            <option>PDF</option>
-                            <option>Excel</option>
-                            <option>CSV</option>
-                            <option>Sheets</option>
-                         </select>
-                         <img src="assets/images/export.svg" class="dropdown_img"> -->
+                      
                       </div>
                    </div>
                    <!-- <div class="col-lg-3 col-md-4 col-sm-12 text-right">
@@ -58,17 +46,34 @@
                             <thead>
                               <tr>
                                 <th scope="col">ID #</th>
-                                <th scope="col"> Status</th>
-                                <th scope="col"> CreateById</th>                             
-                                <th scope="col">Action</th>
+                                <th scope="col"> Customer Date</th>
+                                <th scope="col"> Contact number </th>                             
+                                <th scope="col">Reservation Date</th>
+                                <th scope="col">Table sku</th>
+                                <th scope="col">Tretment Type</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Sub Category</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Slot</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">Price</th>
                               
                               </tr>
                             </thead>
                             <tbody *ngIf="list">
                               <tr *ngFor="let item of list; let i = index">
                                 <th scope="row"><a href="javascript:void(0)">{{item.rmId}}</a></th>
-                                <td>{{item.status}}</td>
-                                <td>{{item.createById}}</td>
+                                <td>{{item.customerName}}</td>
+                                <td>{{item.contactNo}}</td>
+                                <td>{{item.reservationDate | date}}</td>
+                                <td>{{item.roomTableSKUId}}</td>
+                                <td>{{item.treatementtype}}</td>
+                                <td>{{item.therapyCategoryName}}</td>
+                                <td>{{item.therapySubcategoryName}}</td>
+                                <td>{{item.treatmentStatus}}</td>
+                                <td>{{item.timeSlot}}</td>
+                                <td>{{item.startTime | date}}</td>
+                                <td>{{item.price | currency}}</td>
                                 <td>
                                    <!--  <span class="icon_custome">
                                         <a href="javascript:void(0)" (click)="onclick(item,'Edit')"><i class="fa fa-pencil"></i></a>
