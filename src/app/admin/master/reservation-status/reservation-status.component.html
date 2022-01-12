@@ -37,7 +37,7 @@
                               </tr>
                             </thead>
                             <tbody *ngIf="list">
-                              <tr *ngFor="let item of list; let i = index">
+																<tr *ngFor="let item of list | paginate:{itemsPerPage:5,currentPage:p}; let i = index">
                                 <th scope="row"><a href="javascript:void(0)">{{item.id}}</a></th>
                                 <td>{{item.status}}</td>
                                 <td>{{item.createById}}</td>
@@ -56,9 +56,9 @@
                               </tr>
                               
                               
-                            </tbody>
-                        
-                          </table>
+                            </tbody>                        
+													</table>
+													<pagination-controls (pageChange)="p = $event"></pagination-controls>
                       </div>
                    </div>
                 </div>

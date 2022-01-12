@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { TherapistSkillsRoutingModule } from './therapist-skills-routing.module';
 import { TherapistSkillsComponent } from './therapist-skills.component';
 import { TherapyskillmanagerComponent } from './therapyskillmanager/therapyskillmanager.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [TherapistSkillsComponent, TherapyskillmanagerComponent],
@@ -14,6 +16,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     TherapistSkillsRoutingModule,
     FormsModule, ReactiveFormsModule,
+    NgxPaginationModule,
     NgbModule
   ]
 })

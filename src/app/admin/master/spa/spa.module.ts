@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { SpaRoutingModule } from './spa-routing.module';
 import { SpaComponent } from './spa.component';
 import { SpaManegmentComponent } from './spa-manegment/spa-manegment.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SpaRoutingModule,
-    FormsModule, ReactiveFormsModule 
+    NgxPaginationModule,
+    FormsModule, ReactiveFormsModule
   ]
 })
 export class SpaModule { }

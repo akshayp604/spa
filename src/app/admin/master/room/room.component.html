@@ -70,7 +70,7 @@
                               </tr>
                             </thead>
                             <tbody *ngIf="roomlist">
-                              <tr *ngFor="let item of roomlist; let i = index">
+																<tr *ngFor="let item of roomlist | paginate:{itemsPerPage:5,currentPage:p}; let i = index">
                                 <th scope="row"><a href="#">{{item.rmId}}</a></th>
                                 <td>{{item.roomName}}</td>
                                 <td>{{item.spaname}}</td>

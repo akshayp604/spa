@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { TherapistAvailabilityRoutingModule } from './therapist-availability-routing.module';
 import { TherapistAvailabilityComponent } from './therapist-availability.component';
 
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AvailabilityComponent } from './availability/availability.component';
 
 @NgModule({
@@ -15,6 +17,7 @@ import { AvailabilityComponent } from './availability/availability.component';
     CommonModule,
     TherapistAvailabilityRoutingModule,
     FormsModule, ReactiveFormsModule,
+    NgxPaginationModule,
     NgbModule
   ]
 })
