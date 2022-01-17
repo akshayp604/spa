@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { CustomermasterRoutingModule } from './customermaster-routing.module';
 import { CustomermasterComponent } from './customermaster.component';
 import { CustomerManagmentComponent } from './customer-managment/customer-managment.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CustomermasterRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class CustomermasterModule { }

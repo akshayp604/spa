@@ -62,6 +62,7 @@ export class ReservationStatusComponent implements OnInit {
     const modalRef = this.modalService.open(StatusmanagerComponent, { size: 'lg', windowClass: 'modal-holder', centered: true });
     console.log(modalRef)
     modalRef.componentInstance.detail = item;
+    console.log(item)
     // modalRef.componentInstance.employeeId = this.employeeId;
     modalRef.componentInstance.flag = key;
     // if(key == 'edit') {

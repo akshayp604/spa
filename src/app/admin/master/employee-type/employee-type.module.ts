@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { EmployeeTypeRoutingModule } from './employee-type-routing.module';
 import { EmployeeTypeComponent } from './employee-type.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeetypemanagementComponent } from './employeetypemanagement/employeetypemanagement.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { EmployeetypemanagementComponent } from './employeetypemanagement/employ
   imports: [
     CommonModule,
     EmployeeTypeRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class EmployeeTypeModule { }

@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { InsentiveMasterRoutingModule } from './insentive-master-routing.module';
 import { InsentiveMasterComponent } from './insentive-master.component';
 import { InsentivManagerComponent } from './insentiv-manager/insentiv-manager.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +15,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     InsentiveMasterRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class InsentiveMasterModule { }

@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { PackageDetailRoutingModule } from './package-detail-routing.module';
 import { PackageDetailComponent } from './package-detail.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PackagemanagerComponent } from './packagemanager/packagemanager.component';
 
 @NgModule({
@@ -14,6 +16,7 @@ import { PackagemanagerComponent } from './packagemanager/packagemanager.compone
     CommonModule,
     PackageDetailRoutingModule,
     FormsModule, ReactiveFormsModule,
+    NgxPaginationModule,
     NgbModule
   ]
 })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api.service'
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { RoommangementComponent } from './roommangement/roommangement.component'
+
 import { NgxPaginationModule } from 'ngx-pagination';
 
 

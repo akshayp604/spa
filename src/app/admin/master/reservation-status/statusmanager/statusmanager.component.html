@@ -1,1 +1,36 @@
-<p>statusmanager works!</p>
+<div class="modal-header">
+    <h5 class="modal-title mt-0"> {{flag}} Status </h5>
+    <!-- <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button> -->
+  </div>
+  
+  <form (submit)="submitForm()" [formGroup]="stateForm">
+    <div class="modal-body">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="formrow-firstname">Status</label>
+                    <input type="text" class="form-control" formControlName="Status"
+                    [ngClass]="{ 'is-invalid': submitted && f.Status.errors }"
+                        placeholder="Status" id="formrow-FirstStatus">
+                    <div class="invalid-feedback"
+                        *ngIf="f.Status.errors && (submitted)">
+                        <div *ngIf="f.Status.errors.required"> Status Name is
+                            required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+  
+    <div class="modal-footer">
+     
+  
+      <button type="submit" class="btn btn-success" >Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"
+        (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  
+  </form>
+

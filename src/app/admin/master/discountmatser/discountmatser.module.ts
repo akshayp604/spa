@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DiscountmatserRoutingModule } from './discountmatser-routing.module';
 import { DiscountmatserComponent } from './discountmatser.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DiscountMangementComponent } from './discount-mangement/discount-mangement.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { DiscountMangementComponent } from './discount-mangement/discount-mangem
   imports: [
     CommonModule,
     DiscountmatserRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class DiscountmatserModule { }

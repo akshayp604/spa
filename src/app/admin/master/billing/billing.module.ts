@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { BillingRoutingModule } from './billing-routing.module';
 import { BillingComponent } from './billing.component';
 import { BillingManagementComponent } from './billing-management/billing-management.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     BillingRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class BillingModule { }
