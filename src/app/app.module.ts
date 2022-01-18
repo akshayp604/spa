@@ -1,29 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotifierModule,NotifierOptions } from 'angular-notifier';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {FullCalendarModule} from '@fullcalendar/angular';
-import { DateTimePickerModule} from 'ngx-datetime-picker';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { DateTimePickerModule } from 'ngx-datetime-picker';
+
+
+import { Title } from '@angular/platform-browser';
 
 
 const customNotifierOptions: NotifierOptions = {
   position: {
-		horizontal: {
-			position: 'right',
-			distance: 12
-		},
-		vertical: {
-			position: 'top',
-			distance: 12,
-			gap: 10
-		}
-	},
+    horizontal: {
+      position: 'right',
+      distance: 12
+    },
+    vertical: {
+      position: 'top',
+      distance: 12,
+      gap: 10
+    }
+  },
   theme: 'material',
   behaviour: {
     autoHide: 3000,
@@ -62,12 +65,12 @@ const customNotifierOptions: NotifierOptions = {
     NotifierModule.withConfig(customNotifierOptions),
     NgxUiLoaderModule,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule, NgbModule,
     FullCalendarModule,
     DateTimePickerModule
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

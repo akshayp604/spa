@@ -5,14 +5,17 @@ import { ReservationDetailRoutingModule } from './reservation-detail-routing.mod
 import { ReservationDetailComponent } from './reservation-detail.component';
 // import { ReservationdetailComponentchild } from './reservationdetail/reservationdetail.component';
 
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [ReservationDetailComponent],
   imports: [
     CommonModule,
-    ReservationDetailRoutingModule,FormsModule,ReactiveFormsModule,
+    ReservationDetailRoutingModule, FormsModule, ReactiveFormsModule,
+    NgxPaginationModule,
     NgbModule
   ]
 })

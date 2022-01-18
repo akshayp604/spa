@@ -3,6 +3,10 @@ import { ApiService } from '../../../services/api.service'
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ReservationManagerComponent } from './reservation-manager/reservation-manager.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
 @Component({
   selector: 'app-reservationmaster',
   templateUrl: './reservationmaster.component.html',
@@ -11,51 +15,54 @@ import { ReservationManagerComponent } from './reservation-manager/reservation-m
 export class ReservationmasterComponent implements OnInit {
 
   @Output() passEntry: EventEmitter<any> = new EventEmitter();
-  list:any;
-  selected:any;
-  constructor(private api: ApiService, private modalService: NgbModal,) { 
+  list: any;
+  selected: any;
+  collection: any = [];
+  p = 1;
+
+  constructor(private api: ApiService, private modalService: NgbModal, ) {
     this.getlist();
   }
 
   ngOnInit(): void {
   }
 
-  getlist(){
+  getlist() {
     this.list = undefined;
-    this.api.fetchData('/api/N_Reservationmaster/GetAll',{},'GET').subscribe(res => {
+    this.api.fetchData('/api/N_Reservationmaster/GetAll', {}, 'GET').subscribe(res => {
       console.log(res);
       this.api.loader('stop');
-      if(res['status'] == 200) {
+      if (res['status'] == 200) {
         this.list = res['result'];
-   
 
-      }else{
+
+      } else {
         this.api.showNotification('error', 'Failed to fetch data.');
-        
+
       }
     });
   }
 
-  delete(){
+  delete() {
     this.api.loader('start');
-    let data:any =this.api.getAuthDetail()
-    let userinfo =  JSON.parse(data.user);
+    let data: any = this.api.getAuthDetail()
+    let userinfo = JSON.parse(data.user);
     let obj = {
-      Id:this.selected.id,
-      IsDelete:true,
-      DeleteById:userinfo.umId
+      Id: this.selected.id,
+      IsDelete: true,
+      DeleteById: userinfo.umId
     }
-    this.api.deleteData('/api/N_Reservationmaster/delete',obj,'DELETE').subscribe(res => {
+    this.api.deleteData('/api/N_Reservationmaster/delete', obj, 'DELETE').subscribe(res => {
       console.log(res);
       this.api.loader('stop');
-      document.getElementById('close-pop')?.click();
+      document.getElementById('close-pop') ?.click();
       this.getlist();
-    
+
     });
   }
 
-  onclick(item:any,key:string){
-    const modalRef = this.modalService.open(ReservationManagerComponent,  {size: 'lg', windowClass: 'modal-holder', centered: true });
+  onclick(item: any, key: string) {
+    const modalRef = this.modalService.open(ReservationManagerComponent, { size: 'lg', windowClass: 'modal-holder', centered: true });
     console.log(modalRef)
     modalRef.componentInstance.detail = item;
     // modalRef.componentInstance.employeeId = this.employeeId;
@@ -63,11 +70,11 @@ export class ReservationmasterComponent implements OnInit {
     // if(key == 'edit') {
     //   modalRef.componentInstance.index = index;
     // }
-    modalRef.componentInstance.passEntry.subscribe((receivedEntry:any) => {
-    console.log(receivedEntry);
-    this.getlist();
+    modalRef.componentInstance.passEntry.subscribe((receivedEntry: any) => {
+      console.log(receivedEntry);
+      this.getlist();
 
-    // this.employedetail = receivedEntry;
+      // this.employedetail = receivedEntry;
     })
   }
 }

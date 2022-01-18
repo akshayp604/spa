@@ -5,9 +5,11 @@ import { TreatmentStatusRoutingModule } from './treatment-status-routing.module'
 import { TreatmentStatusComponent } from './treatment-status.component';
 import { StatusmanagerComponent } from './statusmanager/statusmanager.component';
 
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [TreatmentStatusComponent, StatusmanagerComponent],
@@ -15,6 +17,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     TreatmentStatusRoutingModule,
     FormsModule, ReactiveFormsModule,
+    NgxPaginationModule,
     NgbModule
   ]
 })
