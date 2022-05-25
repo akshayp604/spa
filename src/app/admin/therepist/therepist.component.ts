@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DatePipe} from '@angular/common';
 declare var $: any; 
 declare var jQuery: any;
 
@@ -94,10 +95,15 @@ declare var jQuery: any;
   styleUrls: ['./therepist.component.css']
 })
 export class TherepistComponent implements OnInit {
+  today: Date = new Date();
+  pipe = new DatePipe('en-US');
+  todayWithPipe: any;
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.todayWithPipe = this.pipe.transform(Date.now(), 'EEEE, MMMM d, y');
   }
 
   ngAfterViewInit(){ 
