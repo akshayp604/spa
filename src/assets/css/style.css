@@ -1205,7 +1205,18 @@ p.bottonline {
         display: flex;
         flex-direction: column;
 }
+
 .inp input.email-margin {
+    border: 0;
+    border: 1px solid #D2D6DB;
+    width: 100%;
+    outline: none;
+    height: 51px;
+    padding: 0 20px;
+    border-radius: 4px;
+        margin-bottom: 30px;
+}
+.inp input.fields-margin {
         border: 0;
         border: 1px solid #D2D6DB;
         width: 100%;
@@ -1215,8 +1226,15 @@ p.bottonline {
         border-radius: 4px;
             margin-bottom: 30px;
 }
+.inp input.fields-margin:focus {
+    border: 1px solid #2028eb;
+}
 .inp input.email-margin:focus {
-        border: 1px solid #2028eb;
+    border: 1px solid #2028eb;
+}
+textarea.fields-margin:focus-visible {
+    border: 1px solid #2028eb;
+    outline: none;
 }
 
 .inp input::placeholder {
@@ -1224,7 +1242,7 @@ p.bottonline {
         font-size: 14px;
 }
 
-.inp label.email {
+.inp label.fields-label {
         position: absolute;
         left: 20px;
         top: -10px;
@@ -1242,10 +1260,23 @@ p.bottonline {
         top: -10px;
 }
 
-.inp .email-margin {
+.inp .fields-margin {
         margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #D2D6DB;
 }
 
+.inp .email-margin {
+    margin-bottom: 10px;
+}
+.inp label.email {
+        position: absolute;
+        left: 20px;
+        top: -10px;
+        color: #95959d;
+        background: #fff;
+        font-size: 14px;
+}
      
 .inp label.pass {
         position: absolute;
@@ -1396,4 +1427,91 @@ span.sec_lbl_radio {
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
+}
+.giftcard_model .inp > p {
+    border: 1px solid #D2D6DB;
+    width: 100%;
+    outline: none;
+    height: 51px;
+    padding: 0 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    line-height: 3.2;
+}
+.giftcard_model .inp > select {
+    border: 1px solid #D2D6DB;
+    width: 100%;
+    outline: none;
+    height: 51px;
+    padding: 0 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    line-height: 3.2;
+    font-size: 14px;
+}
+.paymentdetails-wrapper > h2 {
+    font-size: 19px;
+    margin-bottom: 27px;
+    text-transform: capitalize;
+}
+.giftcard_model ul#pills-tab > li {
+    margin: 0 20px 0 0;
+}
+.giftcard_model ul#pills-tab > li > a {
+    background-color: transparent;
+    color: #000;
+    padding: 0;
+    margin-bottom: 13px;
+}
+.giftcard_model ul#pills-tab > li > a span.radiobutton {
+    border: 1px solid #1c2638;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    border-radius: 20px;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+.giftcard_model ul#pills-tab > li > a.active span.radiobutton:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #1c2638;
+    border-radius: 100%;
+    position: absolute;
+    top: 2.4px;
+    left: 2.4px;
+}
+h5.giftcertificate-inforbar {
+    font-size: 15px;
+    margin-bottom: 19px;
+}
+.service-listing > ul > li {
+    display: inline-flex;
+    width: 48%;
+}
+.service-listing > ul {
+    border: 1px solid #eaeaea;
+    padding: 17px 20px;
+    border-radius: 4px;
+}
+ul.giftcertificate-price > li {
+    display: inline-flex;
+    margin-right: 9px;
+}
+ul.giftcertificate-price {
+    padding-left: 0;
+}
+.inp .fields-margin + small {
+    font-size: 13px;
+    color: #646464;
+}
+
+/*Appoinment Booking*/
+h2.title {
+    font-size: 19px;
+    margin-bottom: 27px;
+    text-transform: capitalize;
 }

@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user',JSON.stringify(res) );
         localStorage.setItem('token',res['token'] );
         this.api.showNotification('success', 'Login succesfully.')
-        this.router.navigate(['admin/appointment']);
+        this.router.navigate(['dashbord/appointment']);
       }else{
         this.api.showNotification('error', res['message']);
 

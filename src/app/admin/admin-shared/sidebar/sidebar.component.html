@@ -7,13 +7,13 @@
    </div>
    <!-- Nav Item - Dashboard -->
    <li class="nav-item">
-      <a class="nav-link" href="javascript:void(0)"  routerLink="/admin/appointment">
+      <a class="nav-link" href="javascript:void(0)"  routerLink="/dashbord/appointment"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/calender.svg" class="toggle_img">
          <span class="nav_content">Appointments</span>
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link" href="javascript:void(0)"  routerLink="/admin/therepist">
+      <a class="nav-link" href="javascript:void(0)"  routerLink="/dashbord/therepist"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/user.svg" class="toggle_img">
          <span class="nav_content">Therapists</span>
       </a>
@@ -26,17 +26,17 @@
         <div class="sidebar-submenu" *ngIf="masterToggel">
            <ul>
               <li>
-              <a href="javascript:void(0)" routerLink="/admin/master/spa"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Spa</span>
+              <a href="javascript:void(0)" routerLink="/dashbord/master/spa"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Spa</span>
 
               </a>
               </li>
               <li>
-              <a href="javascript:void(0)" routerLink="/admin/master/room"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Rooms</span>
+              <a href="javascript:void(0)" routerLink="/dashbord/master/room"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Rooms</span>
 
               </a>
               </li>
               <li>
-              <a href="javascript:void(0)" routerLink="/admin/master/category"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Categories</span>
+              <a href="javascript:void(0)" routerLink="/dashbord/master/category"> <span class="submenu_txt"><i class="fa fa-angle-right"></i> Categories</span>
 
               </a>
               </li>
@@ -53,52 +53,52 @@
      </div>
      <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
        <div class="accordi" aria-labelledby="navbarDropdown">
-          <!-- <a class="dropdown-item" routerLink="/admin/master/category">Category</a> -->
-          <a class="dropdown-item" routerLink="/admin/master/billing">Billing</a>
-          <a class="dropdown-item" routerLink="/admin/master/country">Country</a>
-          <a class="dropdown-item" routerLink="/admin/master/customer">Customer</a>
-          <a class="dropdown-item" routerLink="/admin/master/discount">Discount</a>
-          <a class="dropdown-item" routerLink="/admin/master/employee-type">Employee Type</a>
-          <a class="dropdown-item" routerLink="/admin/master/employeeLeaves">Employee Leaves</a>
-          <a class="dropdown-item" routerLink="/admin/master/insentive">insentive</a>
-          <a class="dropdown-item" routerLink="/admin/master/packageDetail">Package</a>
-          <a class="dropdown-item" routerLink="/admin/master/packageMaster">Package Master</a>
-          <a class="dropdown-item" routerLink="/admin/master/reservationDetail">Reservation Detail</a>
-          <a class="dropdown-item" routerLink="/admin/master/reservationmaster">Reservation Master</a>
-          <a class="dropdown-item" routerLink="/admin/master/reservationStatus">Reservation Status</a>
-          <a class="dropdown-item" routerLink="/admin/master/roomAvaliability">Room Avaliability</a>
-          <a class="dropdown-item" routerLink="/admin/master/roomDetail">Room Detail</a>
-          <a class="dropdown-item" routerLink="/admin/master/room">Room</a>
-          <a class="dropdown-item"routerLink="/admin/master/spa">Spa</a>
-          <a class="dropdown-item" routerLink="/admin/master/state">State</a>
-          <a class="dropdown-item" routerLink="/admin/master/therapistAvailability">Therapist Availability</a>
-          <a class="dropdown-item" routerLink="/admin/master/therapist">Therapist </a>
-          <a class="dropdown-item" routerLink="/admin/master/therapistSkills">Therapist Skills </a>
-          <a class="dropdown-item" routerLink="/admin/master/therapyCategory">Therapy Category </a>
-          <a class="dropdown-item" routerLink="/admin/master/therapySubcategory">Therapy Subcategory </a>
-          <a class="dropdown-item" routerLink="/admin/master/timeSlot">TimeSlot </a>
-          <a class="dropdown-item" routerLink="/admin/master/treatmentStatus">Treatment Status </a>
-          <a class="dropdown-item" routerLink="/admin/master/therapySubCategoryDetail">Therapy Sub Category Detail </a>
-          <a class="dropdown-item" routerLink="/admin/master/userEmployee"> User Employee</a>
+          <!-- <a class="dropdown-item" routerLink="/dashbord/master/category">Category</a> -->
+          <a class="dropdown-item" routerLink="/dashbord/master/billing"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Billing </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/country"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Country</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/customer"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Customer</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/discount"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Discount</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/employee-type"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Employee Type</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/employeeLeaves"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Employee Leaves</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/insentive"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">insentive</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/packageDetail"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Package</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/packageMaster"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Package Master</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/reservationDetail"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Reservation Detail</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/reservationmaster"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Reservation Master</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/reservationStatus"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Reservation Status</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/roomAvaliability"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Room Avaliability</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/roomDetail"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Room Detail</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/room"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Room</a>
+          <a class="dropdown-item"routerLink="/dashbord/master/spa"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Spa</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/state"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">State</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapistAvailability"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapist Availability</a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapist"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapist </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapistSkills"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapist Skills </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapyCategory"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapy Category </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapySubcategory"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapy Subcategory </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/timeSlot"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">TimeSlot </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/treatmentStatus"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Treatment Status </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/therapySubCategoryDetail"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Therapy Sub Category Detail </a>
+          <a class="dropdown-item" routerLink="/dashbord/master/userEmployee"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"> User Employee</a>
      </div>
      </div>
   </li>
  
    
   <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)"  routerLink="/admin/sales">
+      <a class="nav-link"  href="javascript:void(0)"  routerLink="/dashbord/sales"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/dollar.svg" class="toggle_img">
          <span class="nav_content">Sales</span>
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)" routerLink="/admin/analytics">
+      <a class="nav-link"  href="javascript:void(0)" routerLink="/dashbord/analytics"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/graph.svg" class="toggle_img">
          <span class="nav_content">Analytics</span>
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)" routerLink="/admin/giftcertificate">
+      <a class="nav-link"  href="javascript:void(0)" routerLink="/dashbord/giftcertificate"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/giftcard.svg" class="toggle_img">
          <span class="nav_content">Gift Certificate</span>
       </a>
@@ -110,19 +110,19 @@
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)" routerLink="/admin/products">
+      <a class="nav-link"  href="javascript:void(0)" routerLink="/dashbord/products"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/product.svg" class="toggle_img">
          <span class="nav_content">Products</span>
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)" routerLink="/admin/communications">
+      <a class="nav-link"  href="javascript:void(0)" routerLink="/dashbord/communications"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/chat.svg" class="toggle_img">
          <span class="nav_content">Communication</span>
       </a>
    </li>
    <li class="nav-item">
-      <a class="nav-link"  href="javascript:void(0)" routerLink="/admin/settings">
+      <a class="nav-link"  href="javascript:void(0)" routerLink="/dashbord/settings"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
          <img src="assets/images/setting.svg" class="toggle_img">
          <span class="nav_content">Settings</span>
       </a>

@@ -196,6 +196,8 @@
             </div>
         </div>
 
+
+
         <div class="modal fade" id="giftnew" tabindex="-1" aria-labelledby="additemModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
@@ -210,190 +212,449 @@
 
                             <div class="first_panel w-100">
                                 <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h5 class="giftcertificate-inforbar"><strong>Coupon Code:</strong> LBB764681SCD
+                                        </h5>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 text-right">
+                                        <h5 class="giftcertificate-inforbar"><strong>Date:</strong> 5/25/2022</h5>
+                                    </div>
+
                                     <div class="col-md-12">
-                                        <div class="radio_custom_bdy">
-                                            <span class="heading_small">
-                                                1.
-                                            </span>
-                                            <div class="form-check-inline">
-                                                <label class="form-check-label" for="radio1">
-                                                    <input type="radio" class="form-check-input" id="radio1"
-                                                        name="optradio" value="option1">Amount
-                                                </label>
-                                            </div>
-                                            <div class="form-check-inline">
-                                                <label class="form-check-label" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2"
-                                                        name="optradio" value="option2">Service
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class=" " id="option1" role="tabpanel" aria-labelledby="home-tab">
-                                            <div class="col-md-6">
-                                                <div class="inp">
-                                                    <label class="email" for="email"> Gift Certificate Amount </label>
-                                                    <input class="email-margin" type="email" id="email"
-                                                        placeholder="$" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class=" " id="option2" role="tabpanel" aria-labelledby="profile-tab">
-                                            <div class="col-md-6">
-                                                <div class="select_inp">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected="">Service</option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="select_inp_add">
-                                                    <div class="additem">
-                                                        <a href="#" class="additem-link" data-toggle="modal"
-                                                            data-target="#additemModal"> + Add Service</a>
+
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" id="pills-amount-tab" data-toggle="pill"
+                                                    href="#pills-amount" role="tab" aria-controls="pills-amount"
+                                                    aria-selected="true">
+                                                    <span class="radiobutton"></span> Amount
+                                                </a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="pills-service-tab" data-toggle="pill"
+                                                    href="#pills-service" role="tab" aria-controls="pills-service"
+                                                    aria-selected="false">
+                                                    <span class="radiobutton"></span> Service
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-amount" role="tabpanel"
+                                                aria-labelledby="pills-amount-tab">
+                                                <div id="option1">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="inp">
+                                                                <label class="fields-label" for="fields-label"> Gift
+                                                                    Certificate Amount </label>
+                                                                <input class="fields-margin mb-0" type="fields-label"
+                                                                    id="fields-label" placeholder="$" />
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                    <div class="under_line"></div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">From:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">To:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Title:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Message:</label>
+                                                                <textarea class="fields-margin"></textarea>
+                                                                <small>Total characters left: 140</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="under_line"></div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Discount:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>None</option>
+                                                                    <option value="1">10%</option>
+                                                                    <option value="2">20%</option>
+                                                                    <option value="3">30%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Discount Amount:</label>
+                                                                <p>0:00</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Gratuity:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>None</option>
+                                                                    <option value="1">In %</option>
+                                                                    <option value="2">Amount</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Gratuity Amount:</label>
+                                                                <p>0:00</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Tax(4.71%):</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Net Amount:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-2 under_line"></div>
+
+                                                    <div class="paymentdetails-wrapper">
+                                                        <h2>Payment Details</h2>
+                                                        <div class="col-md-6 pl-0">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Payment Mode:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>Select</option>
+                                                                    <option value="1">Cash</option>
+                                                                    <option value="2">Check</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-service" role="tabpanel"
+                                                aria-labelledby="pills-service-tab">
+                                                <div class="option2">
+                                                    <div class="service-listing">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Body Wraps</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Mini</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Personalized Healing
+                                                                        Services</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Classic Massage</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Monthly Special</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Scrubs</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Decleor</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Ocean Front</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Signature Massage</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Facials</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Packages</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Body Wraps</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Tinting</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Hydro</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Pedicures</label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customCheck1">
+                                                                    <label class="custom-control-label"
+                                                                        for="customCheck1">Waxing</label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="mt-4 under_line"></div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Amount:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="$" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mt-0 under_line"></div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <ul class="giftcertificate-price">
+                                                                <li>Do you want to display price on Gift certificate.
+                                                                </li>
+                                                                <li>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox"
+                                                                            class="custom-control-input" id="showprice">
+                                                                        <label class="custom-control-label"
+                                                                            for="showprice">Show Price</label>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">From:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">To:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Title:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Message:</label>
+                                                                <textarea class="fields-margin"></textarea>
+                                                                <small>Total characters left: 140</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="under_line"></div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Discount:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>None</option>
+                                                                    <option value="1">Cash</option>
+                                                                    <option value="2">Check</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Discount Amount:</label>
+                                                                <p>0.00</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Gratuity:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>None</option>
+                                                                    <option value="1">Cash</option>
+                                                                    <option value="2">Check</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Gratuity Amount:</label>
+                                                                <p>0.00</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Tax(4.71%):</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Net Amount:</label>
+                                                                <input class="fields-margin" type="text"
+                                                                    placeholder="" />
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="mt-2 under_line"></div>
+
+                                                    <div class="paymentdetails-wrapper">
+                                                        <h2>Payment Details</h2>
+                                                        <div class="col-md-6 pl-0">
+                                                            <div class="inp">
+                                                                <label class="fields-label">Payment Mode:</label>
+                                                                <select class="custom-select">
+                                                                    <option selected>Select</option>
+                                                                    <option value="1">Cash</option>
+                                                                    <option value="2">Check</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
+
+
+
                                     </div>
 
                                 </div>
-
-                                <div class="under_line"></div>
                             </div>
-                            <div class="second_panel w-100">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="heading_sec">
-                                            <h3>2. Details </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Recepient’s Name </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Recepient’s Email </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Sender’s Name </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Sender’s Email </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="textarea_bdy">
-                                            <textarea class="email-margin" type="text" id="email"
-                                                placeholder="Write a short message"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="under_line"></div>
-                            </div>
-                            <div class="second_panel w-100">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="heading_sec">
-                                            <h3>3. Discount </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="sec_radio_btn_two">
-                                            <span class="sec_lbl_radio">Discount Type</span>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label" for="radio3">
-                                                <input type="radio" class="form-check-input" id="radio3" name="distype"
-                                                    value="option1">Percentage
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label" for="radio4">
-                                                <input type="radio" class="form-check-input" id="radio4" name="distype"
-                                                    value="option2">Fixed Amount
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Discount Value </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="" />
-                                        </div>
-                                    </div>
 
 
-                                </div>
-                                <div class="under_line"></div>
-                            </div>
-                            <div class="second_panel w-100">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="heading_sec">
-                                            <h3>4. Gratuity </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="sec_radio_btn_two">
-                                            <span class="sec_lbl_radio">Gratuity Type</span>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label" for="radio6">
-                                                <input type="radio" class="form-check-input" id="radio6" name="gratype"
-                                                    value="option11">Percentage
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label" for="radio7">
-                                                <input type="radio" class="form-check-input" id="radio7" name="gratype"
-                                                    value="option12">Fixed Amount
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="inp">
-                                            <label class="email" for="email"> Gratuity Value </label>
-                                            <input class="email-margin" type="text" id="email" placeholder="$" />
-                                        </div>
-                                    </div>
 
-
-                                </div>
-
-                            </div>
                         </form>
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <div class="footer_inner row">
-                            <div class="col-md-6">
-                                <div class="footer_txt ">
-                                    <h3>Net Amount : $360.28</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <div class="footer_btn ">
-                                    <button type="button" class="btn btn-payment" data-dismiss="modal">Proceed to
-                                        Payment</button>
+                            <div class="col-md-12 text-right">
+                                <div class="footer_btn">
+                                    <button type="button" class="btn btn-payment" data-dismiss="modal">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -401,3 +662,5 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
