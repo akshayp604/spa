@@ -5,7 +5,6 @@ import { AppointmentRoutingModule } from './appointment-routing.module';
 import { AppointmentComponent } from './appointment.component';
 import {FullCalendarModule} from '@fullcalendar/angular';
 
-
 @NgModule({
   declarations: [AppointmentComponent],
   imports: [

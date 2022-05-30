@@ -40,6 +40,7 @@ export class BookAppointmentComponent implements OnInit {
 	overAllPrice = 0
 	overDeAllPrice = 0
 	temArray:any = []
+	people : any = []
 	getcategoriesArray: any = []
 	selectedDate:any;
 	selectedTime:any;
@@ -94,17 +95,31 @@ export class BookAppointmentComponent implements OnInit {
 	this.items = this.appointmentform.get('customer') as FormArray;
 	this.items.removeAt(i);
 	}
+	onKeyUpEvent(event: any){
+
+		this.people = [];
+
+		console.log(event.target.value);
+		let n = event.target.value;
+		for(let i=1; i<=n; i++){
+			this.people.push(i);
+			
+		}
+		console.log(this.people);
+	 
+	 }
 	createItem(data:any): FormGroup {
 		return this.fb.group({
 		  firstName: data&&data.firstName?data.firstName:'',
 		  lastName: data&&data.lastName?data.lastName:'',
 		  contactNumber: data&&data.contactNumber?data.contactNumber:'' ,
 		  email: [data&& data.email ?data.email:'',[Validators.required, Validators.email]],
+		  name : data&&data.name?data.name:'',
 		  cateories: [this.selectedTherapyItems1
 			,Validators.required],
 		  sucategories: [data&&data.sucategories&& data.sucategories?data.sucategories:'',Validators.required],
 		  // filename: ['',Validators.required],
-		  price: [data&&data.price?data.price:'',Validators.required],
+		  price: data&&data.price?data.price:'',
 		  preference: [data&&data.preference?data.preference:''],
 		});
 	}
@@ -119,10 +134,19 @@ ScrollIntoView(elem: any) {
 	document.querySelector(elem).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 open(content: any, getname:any, item:any) {
+	// this.appointmentform.reset()
+
+	
 	console.log(item);
 	this.displayName = getname.Name
-	this.selectTherapy({ id: item.Id, name: item.Name })
+	this.selectTherapy({ id: item.Id, name: item.Name },0)
+	this.selectedTherapyItems1 = [];
 	this.selectedTherapyItems1.push({ id: item.Id, name: item.Name })
+	this.appointmentform = this.fb.group({
+		// Selectcategories: ["",Validators.required],
+		customer: this.fb.array([ ])
+	  });	
+	  this.addItem({})
 
 	this.modalService.open(content, { size: 'xl' }).result.then((result) => {
 		console.log(result);
@@ -131,24 +155,19 @@ open(content: any, getname:any, item:any) {
 	}, (reason) => {
 		this.closeResult = `Dismissed`;
 	});
-	this.appointmentform = this.fb.group({
-		// Selectcategories: ["",Validators.required],
-		customer: this.fb.array([ ])
-	  });	
-
-	  this.addItem({})
 	// this.selectedTherapyItems
 
 }
 ChangeSortOrder(no: any) {
 	this.slectOne = no
 }
-selectTherapy(evt: any) {
+selectTherapy(evt: any,i:any) {
 	console.log(evt)
 	this.selectedTherapyItems.push(evt)
 	// this.selectedcategries =[]
-	this.filteredcat = []
+	// this.filteredcat = []
 	let item:any = []
+	let tempcatdata = this.filteredcat[i] ? this.filteredcat[i] : []
 	this.api.fetchData('/api/N_TherapySubcategory/GetSubcategoryWithDetail', { CategoryId:evt.id}, 'GET').subscribe(res => {
 		console.log(res);
 		this.api.loader('stop');
@@ -176,10 +195,16 @@ selectTherapy(evt: any) {
 			console.log(this.getcategoriesArray);
 			item.map((arr:any) =>{
 				
-				this.tempSelectedTherapyItems.push({ id: arr.id, name: arr.therapySubcategoryName })
-			})			
-			this.filteredcat = this.tempSelectedTherapyItems
-			console.log(this.filteredcat);
+				this.tempSelectedTherapyItems.push({ id: arr.id, name: arr.therapySubcategoryName, price:arr.price })
+				tempcatdata.push({ id: arr.id, name: arr.therapySubcategoryName,price:arr.price  })
+			
+			})
+			this.filteredcat[i] = [];
+			setTimeout(() => {
+				this.filteredcat[i] = tempcatdata
+			}, 700);
+			console.log('category afeter updates', this.filteredcat[i])
+			// console.log(this.filteredcat);
 		} else {
 			this.api.showNotification('error', 'Failed to fetch data.');
 		}
@@ -188,7 +213,7 @@ selectTherapy(evt: any) {
 
 
 
-deSelectTherapy(evt: any) {
+deSelectTherapy(evt: any, i:any) {
 	this.deSelectedTherapyItems = []
 	console.log(evt);
 	this.api.fetchData('/api/N_TherapySubcategory/GetSubcategoryWithDetail', { CategoryId: evt.id }, 'GET').subscribe(res => {
@@ -199,7 +224,7 @@ deSelectTherapy(evt: any) {
 			let item: any = []
 			this.deSelectedTherapyItems = res['result'];
 			item = res['result'];
-			this.temArray = this.filteredcat
+			this.temArray = this.filteredcat[i]
 			console.log(this.deSelectedTherapyItems, this.temArray);
 			
 			for (let i = 0; i < this.temArray.length; i++) {
@@ -213,7 +238,7 @@ deSelectTherapy(evt: any) {
 			}
 			this.filteredcat = []
 			setTimeout(() => {
-				this.filteredcat = this.temArray
+				this.filteredcat[i] = this.temArray
 				console.log(this.filteredcat, this.temArray);
 			}, 700);
 		} else {
@@ -221,13 +246,16 @@ deSelectTherapy(evt: any) {
 		}
 	});
 }
-selectSubTherapy(evt: any, data:any,i:any) {
-	console.log(this.getcategoriesArray);
+selectSubTherapy(evt: any, data:any,i:any, ) {
+	console.log(this.getcategoriesArray, evt, this.items.value[i]);
 	let price = 0;
-	this.getcategoriesArray.map((f:any)=>{
-		if (f.id == evt.id){
-			price += f.price
-		}
+	this.items[i]
+	this.items.value[i].sucategories.map((f:any)=>{
+		let index = this.filteredcat[i].findIndex((j:any) => f.id == j.id)
+			console.log(this.filteredcat[i][index])
+			if(index != -1) {
+				price += this.filteredcat[i][index].price
+			}
 	})
 	this.customer.at(i).patchValue({
 		price:price
@@ -235,10 +263,12 @@ selectSubTherapy(evt: any, data:any,i:any) {
 }
 deSelectSubTherapy(evt: any, i:any) {
 	let price = 0;
-	this.getcategoriesArray.map((f: any) => {
-		if (f.id == evt.id) {
-			price -= f.price
-		}
+	this.items.value[i].sucategories.map((f:any)=>{
+		let index = this.filteredcat[i].findIndex((j:any) => f.id == j.id)
+			console.log(this.filteredcat[i][index])
+			if(index != -1) {
+				price += this.filteredcat[i][index].price
+			}
 	})
 	this.customer.at(i).patchValue({
 		price: price
@@ -366,6 +396,11 @@ getTimeSlot(){
 	submitForm(){
 	console.log(this.appointmentform.value);
 	document.getElementById('closeModel-res')?.click();
+	setTimeout(() => {
+		console.log('pick a time ')
+		document.getElementById('ngb-nav-1')?.click();
+
+	},200)
 	}
 	onSelectTime(item:any){
 		console.log(item)
@@ -377,6 +412,8 @@ getTimeSlot(){
 		this.selectedDate = new Date(e.year, e.month-1, e.day)
 		console.log(this.selectedDate);	
 	}
+	
+	
 	modelClose(){
 		this.selectedTherapyItems = []
 	}

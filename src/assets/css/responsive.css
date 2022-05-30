@@ -45,6 +45,12 @@
     }
 }
 
+@media only screen and (max-width: 1280px){
+	.invoicemain{
+		max-width: 80%;
+	}
+}
+
 @media only screen and (max-width: 1199px) {
     select.custom_select_bx.t_select {
         width: 79px;
@@ -92,11 +98,15 @@
         border-left: 1px solid #ddd;
         padding: 10px;
     }
+
 }
 
 @media (min-width: 1199px) {}
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+
+	
+}
 
 @media (min-width: 991px) {
     .sidebar {
@@ -111,6 +121,8 @@
         width: 80px!important;
     }
 }
+
+
 
 @media screen and (max-width: 992px) {
     .row-mob .col {
@@ -204,6 +216,45 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
+	
+	/*Checkout*/
+	.checkout-wrapper > .col-md-9, .checkout-wrapper > .col-md-3 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.options-area > ul > li {
+		width: 100%;
+	}
+	.col.profile {
+		max-width: 59px !important;
+	}
+	.sidebarfooter .col-md-6.col-sm-12 > .dropdown, .sidebarfooter .col-md-6.col-sm-12 > .dropdown > button{
+		font-size: 12px;
+	}
+	.sidebarfooter .col-md-6.col-sm-12 > .custom_btn_in.ml-md-3 > a{
+		height: 38px;
+		line-height: 19px;
+		font-size: 12px;
+	}
+	.btn_new{
+		margin-left: 0;
+	}
+	.sidebarfooter > .row > .col-md-6 {
+		padding: 0 13px;
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin-bottom: 7px;
+	}
+	.checkout-wrapper input, .checkout-wrapper select{
+		padding: 8px 2px;
+		width: 100%;
+		font-size: 12px;
+	}
+	.amount-total ul > li .col > p {
+		margin-bottom: 8px;
+		font-size: 14px;
+	}
+	
 }
 
 @media only screen and (max-width: 767px) {
@@ -224,7 +275,7 @@
         width: 100%;
     }
     #pills-sales th, td {
-        font-size: 14px !important;
+        font-size: 14px;
         vertical-align: middle !important;
     }
     /*mobile toggle css*/
@@ -234,8 +285,53 @@
         left: 4px !important;
         top: 60px !important;
     }
-    
+	
+	/*Checkout*/
+	.productinfo-card > .row + .row > div {
+		margin-bottom: 12px;
+	}
+	.productinfo-card .col-md-2.pl-0 {
+		padding-left: 15px !important;
+	}
+	.productinfo-card{
+		padding: 23px 0px 31px 0px;
+	}
+	.productinfo-card > .row-mob {
+		margin: 0 15px !important;
+	}
+	.amounttotal-section .additem {
+		margin-bottom: 18px;
+	}
+	.amount-total > ul {
+		padding-left: 0;
+	}
+	.sidebarfooter{
+		position: static;
+	}
+	.checkoutsidebar{
+		padding-bottom: 0px;
+	}
+	.productinfo-card .row.mx-0.row-mob > .col-md-8 {
+		margin-bottom: 9px;
+	}
+	.productinfo-card .row.mx-0.row-mob > .col-md-8, .productinfo-card .row.mx-0.row-mob > .col {
+		max-width: 100%;
+	}
+	form.creditcard-form .form-row > .form-group.col-md-4.col-sm-12 {
+		margin-bottom: 10px;
+	}
+	
+	h1.admin_header_txt{
+		font-size: 18px;
+	}
 }
+
+@media only screen and (max-width: 568px){
+	.invoicemain {
+		max-width: 100%;
+	}
+}
+
 @media only screen and (max-width: 480px) {
     #pills-sales .custom_select_in {
         width: 100%;
@@ -246,4 +342,18 @@
     #pills-sales select.custom_select_bx {
         min-width: 100%;
     }
+	
+	/*Checkout*/
+	ul.invoice-amount > li > .row > .col {
+		display: inline-table;
+	}
+	ul.invoice-amount > li .col.gridright p{
+		text-align: left;
+	}
+	.product-detail > ul > li > .row > .col > p {
+		text-align: left !important;
+	}
+	.product-detail > ul > li > .row > .col {
+		max-width: 100%;
+	}
 }

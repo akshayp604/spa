@@ -14,18 +14,19 @@
 					<a class="btn btn-default m-1 p-2" ngbNavLink id="ngb-nav-0">Select your services</a>
 					<ng-template ngbNavContent>
 						<!-- {{subCategoryDetail | json}} -->
-						
+
 						<div class="bgTran7 card shadow my-3 mt-3">
 							<div class="row mx-0 py-3" *ngIf="subCategoryDetail.length > 0">
 								<!-- <div class="col-md-4 mb-3" *ngFor="let item of subCategoryDetail; let i = 1ndex"> -->
 								<div class="col-md-4 mb-3" *ngFor="let item of subCategoryDetail;let i = index">
-								<!-- <div class="col-md-4 mb-3" > -->
+									<!-- <div class="col-md-4 mb-3" > -->
 									<div class="single-blog-item">
 										<div class="img-holder">
-											<img src="{{item.image ? item.image:'assets/img/services/img-01.jpg'}}" alt=" Image">
+											<img src="{{item.image ? item.image:'assets/img/services/img-01.jpg'}}"
+												alt=" Image">
 											<div class="overlay-style-one"></div>
 											<div class="categories">
-												<a >{{item.Name}}</a>
+												<a>{{item.Name}}</a>
 											</div>
 										</div>
 										<div class="text-holder">
@@ -35,25 +36,28 @@
 														<div class="tab_sec_inner_bdy_left">
 															<h5 class="product-service">{{child.Name}}</h5>
 															<span class="price_inner">
-																<span class="time">{{child.Details[0]?.Duration}} Minutes</span>
-																<span class="price"> {{child.Details[0]?.Price | currency}} </span>
+																<span class="time">{{child.Details[0]?.Duration}}
+																	Minutes</span>
+																<span class="price"> {{child.Details[0]?.Price |
+																	currency}} </span>
 															</span>
 														</div>
 														<div class="tab_sec_inner_bdy_right">
 															<!-- <span class="value_quty">1</span> -->
-															<a class="btn btn_txt px-2" (click)="open(content, child, item)"> <i
+															<a class="btn btn_txt px-2"
+																(click)="open(content, child, item)"> <i
 																	class="fa fa-plus"></i></a>
 														</div>
 													</div>
 												</li>
-												
+
 											</ul>
 										</div>
 									</div>
 								</div>
-							
+
 							</div>
-						
+
 						</div>
 						<ng-template #content let-modal>
 							<div class="modal-header py-2">
@@ -67,17 +71,18 @@
 								</button>
 							</div>
 							<div class="modal-body">
-								<form  (submit)="submitForm()" [formGroup]="appointmentform">
-								
-									<div class="col-lg-12" *ngFor="let customer of appointmentform.get('customer').controls;let i = index"
-									[formGroup]="customer">
+								<form (submit)="submitForm()" [formGroup]="appointmentform">
+
+									<div class="col-lg-12"
+										*ngFor="let customer of appointmentform.get('customer').controls;let i = index"
+										[formGroup]="customer">
 										<div class="row">
 											<div class="col-md-3">
 												<div class="form-group mb-2">
 													<label for="inputSPA">First Name</label>
-													<input class="form-select form-control" aria-label="Default select example"
-													formControlName="firstName"
-													[ngClass]="{ 'is-invalid': submitted && pointAt(i).firstName.errors }"
+													<input class="form-select form-control"
+														aria-label="Default select example" formControlName="firstName"
+														[ngClass]="{ 'is-invalid': submitted && pointAt(i).firstName.errors }"
 														placeholder="firstName" id="formrow-Firstname">
 													<div class="invalid-feedback"
 														*ngIf="pointAt(i).firstName.errors && (submitted)">
@@ -95,46 +100,48 @@
 											<div class="col-md-3">
 												<div class="form-group mb-2">
 													<label for="inputcenter">Last name</label>
-													<input class="form-select form-control" aria-label="Default select example"
-													formControlName="lastName"
-													[ngClass]="{ 'is-invalid': submitted && pointAt(i).lastName.errors }"
+													<input class="form-select form-control"
+														aria-label="Default select example" formControlName="lastName"
+														[ngClass]="{ 'is-invalid': submitted && pointAt(i).lastName.errors }"
 														placeholder="lastName" id="formrow-lastName">
 													<div class="invalid-feedback"
 														*ngIf="pointAt(i).lastName.errors && (submitted)">
 														<div *ngIf="pointAt(i).lastName.errors.required">lastName is
 															required</div>
 													</div>
-													
+
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="form-group mb-2">
 													<label for="inputSPA">Contact Number</label>
-													<input class="form-select form-control" aria-label="Default select example"
-													formControlName="contactNumber"
-													[ngClass]="{ 'is-invalid': submitted && pointAt(i).contactNumber.errors }"
+													<input class="form-select form-control"
+														aria-label="Default select example"
+														formControlName="contactNumber"
+														[ngClass]="{ 'is-invalid': submitted && pointAt(i).contactNumber.errors }"
 														placeholder="contactNumber" id="formrow-contactNumber">
 													<div class="invalid-feedback"
 														*ngIf="pointAt(i).contactNumber.errors && (submitted)">
-														<div *ngIf="pointAt(i).contactNumber.errors.required">Contact Number is
+														<div *ngIf="pointAt(i).contactNumber.errors.required">Contact
+															Number is
 															required</div>
 													</div>
-													
+
 												</div>
 											</div>
 											<div class="col-md-3">
 												<div class="form-group mb-2">
 													<label for="inputSPA">Email</label>
-													<input class="form-select form-control" aria-label="Default select example"
-													formControlName="email"
-													[ngClass]="{ 'is-invalid': submitted && pointAt(i).email.errors }"
+													<input class="form-select form-control"
+														aria-label="Default select example" formControlName="email"
+														[ngClass]="{ 'is-invalid': submitted && pointAt(i).email.errors }"
 														placeholder="email" id="formrow-email">
 													<div class="invalid-feedback"
 														*ngIf="pointAt(i).email.errors && (submitted)">
 														<div *ngIf="pointAt(i).email.errors.required">email is
 															required</div>
 													</div>
-													
+
 												</div>
 												<!-- <div class="form-group mb-2">
 													<label for="inputSPA">Email</label>
@@ -152,16 +159,14 @@
 										</div>
 									</div>
 
-
 									<div class="col-md-6">
 										<div class="numberofpeopal">
 											<div class="form-group mb-2">
 												<label>Number Of People</label>
-												<input class="form-select form-control" (keyup)="onKeyUpEvent($event)"  type="text" placeholder="Choose Number" >
+												<input class="form-select form-control" type="number" placeholder="Choose Number" >
 											</div>
 										</div>											
 									</div>
-
 
 
 									<div class="col-md-12">
@@ -169,74 +174,75 @@
 											<div class="d-flex justify-content-between align-items-center">
 												Additional Reservation's
 												Details
-												<div style="float: right;">
+												<div style="float: right;"><button class="btn btn-success" type="button"
+														(click)="addItem({})">Add</button>
 												</div>
 											</div>
 										</h6>
 										<hr class="mt-0" />
 									</div>
-									<div class="col-md-12 form-group mb-2" >
-										<div class="table-responsive-sm" >
-											<table class="table table-bordered" >
-											<thead>
-												<tr>
-													<th>S.No.</th>
-													<th>Name</th>
-													<th>Therapy Category</th>
-													<th>Therapy Details</th>
-													<th>Price</th>
-													<th>Therapist Preference</th>
-													<th>Action</th>
-												</tr>
-											</thead>
-											<tbody *ngFor="let arr of people">
-												<tr *ngFor="let customer of appointmentform.get('customer').controls;let i = index"
-												[formGroup]="customer">
-													<td>{{arr}}</td>
-													<td>
-														<input class="form-control" formControlName="name" />
-													</td>
-													<td>
-														<ng-multiselect-dropdown [placeholder]="'Therapy Detail'"
-															[settings]="dropdownSettings" [data]="categorylist"
-															(onSelect)="selectTherapy($event,i)"
-															
-															(onDeSelect)="deSelectTherapy($event,i)"
-															
-															formControlName="cateories"
-														
-															 >
-														</ng-multiselect-dropdown>
-													</td>
-													<td>
-														<ng-multiselect-dropdown [placeholder]="' Sub Therapy Detail'"
-															[settings]="dropdownSettings1" [data]="filteredcat[i]"
-															(onSelect)="selectSubTherapy($event, customer.value.sucategories,i)"
-															(onDeSelect)="deSelectSubTherapy($event,i)"
-															formControlName="sucategories" >
-														</ng-multiselect-dropdown>
+									<div class="col-md-12 form-group mb-2">
+										<div class="table-responsive-sm">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>S.No.</th>
+														<th>Name</th>
+														<th>Therapy Category</th>
+														<th>Therapy Details</th>
+														<th>Price</th>
+														<th>Therapist Preference</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor="let customer of appointmentform.get('customer').controls;let i = index"
+														[formGroup]="customer">
+														<td>{{i+1}}</td>
+														<td>
+															<input class="form-control" formControlName="firstName"
+																[value]="customer.value.firstName" />
+														</td>
+														<td>
+															<ng-multiselect-dropdown [placeholder]="'Therapy Detail'"
+																[settings]="dropdownSettings" [data]="categorylist"
+																(onSelect)="selectTherapy($event,i)"
+																(onDeSelect)="deSelectTherapy($event,i)"
+																formControlName="cateories">
+															</ng-multiselect-dropdown>
+														</td>
+														<td>
+															<ng-multiselect-dropdown
+																[placeholder]="' Sub Therapy Detail'"
+																[settings]="dropdownSettings1" [data]="filteredcat[i]"
+																(onSelect)="selectSubTherapy($event, customer.value.sucategories,i)"
+																(onDeSelect)="deSelectSubTherapy($event,i)"
+																formControlName="sucategories">
+															</ng-multiselect-dropdown>
 
-													</td>
-													<td>
-														<input class="form-control" formControlName="price"  />
-													</td>
-													<td>
-														<div class="d-flex">
-															<select class="form-control" formControlName="preference" >
-																<option value="">No Preference</option>
-																<option value="Female">Female</option>
-																<option value="Male">Male</option>
-															</select>
-														</div>
-													</td>
-													<td><button class="btn btn-link px-1" type="button" (click)="remove(i)"  placement="top" [disabled]="i == 0"
-															ngbTooltip="delete"><i
-																class="fa fa-trash text-danger"></i></button></td>
-												</tr>
-											</tbody>
-										</table>
+														</td>
+														<td>
+															<input class="form-control" formControlName="price" />
+														</td>
+														<td>
+															<div class="d-flex">
+																<select class="form-control"
+																	formControlName="preference">
+																	<option value="">No Preference</option>
+																	<option value="Female">Female</option>
+																	<option value="Male">Male</option>
+																</select>
+															</div>
+														</td>
+														<td><button class="btn btn-link px-1" type="button"
+																(click)="remove(i)" placement="top" [disabled]="i == 0"
+																ngbTooltip="delete"><i
+																	class="fa fa-trash text-danger"></i></button></td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
-										
+
 									</div>
 								</form>
 								<hr>
@@ -272,7 +278,8 @@
 								</div>
 								<div class="col-lg-4">
 									<!-- https://stackblitz.com/edit/angular-ngbdatepicker?file=app%2Fdatepicker-popup.html -->
-									<ngb-datepicker (dateSelect)="onDateSelect($event)"  [(ngModel)]="ngDatevalue"  [minDate]="minimumDate"
+									<ngb-datepicker (dateSelect)="onDateSelect($event)" [(ngModel)]="ngDatevalue"
+										[minDate]="minimumDate"
 										class="q-datepicker position-relative w-100 border-0 shadow-sm bg-light" #d>
 									</ngb-datepicker>
 								</div>
@@ -283,9 +290,11 @@
 												<h4 class="text-uppercase text-left mb-1">MORNING</h4>
 												<ng-container *ngFor="let item of timeList; let i = index">
 
-													<button *ngIf="item.ismoorning" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
-													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
-													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
+													<button *ngIf="item.ismoorning"
+														class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+														[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
+														(click)="onSelectTime(item)" type="button">
+														{{item.timeSlot}}</button>
 												</ng-container>
 												<!-- <button class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
 													type="button">10:30
@@ -303,11 +312,13 @@
 												<h4 class="text-uppercase text-left mb-1">afternoon</h4>
 												<ng-container *ngFor="let item of timeList; let i = index">
 
-													<button *ngIf="item.afternoon" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
-													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
-														(click)="onSelectTime(item)"type="button" > {{item.timeSlot}}</button>
+													<button *ngIf="item.afternoon"
+														class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+														[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
+														(click)="onSelectTime(item)" type="button">
+														{{item.timeSlot}}</button>
 												</ng-container>
-												
+
 											</div>
 										</div>
 										<div class="col-md-12">
@@ -315,15 +326,16 @@
 												<h4 class="text-uppercase text-left mb-1">evening</h4>
 												<ng-container *ngFor="let item of timeList; let i = index">
 
-													<button *ngIf="item.isevening" class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
-													[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
-													(click)="onSelectTime(item)" type="button" > {{item.timeSlot}}</button>
+													<button *ngIf="item.isevening"
+														class="btn btn-inline btn-outline-dark m-1 btn-sm fs-12"
+														[ngClass]="{'active': item.id == selectedTime?.id, 'disabled': item.disabled == true}"
+														(click)="onSelectTime(item)" type="button">
+														{{item.timeSlot}}</button>
 												</ng-container>
 											</div>
 										</div>
 									</div>
 								</div>
-								<button class="btn btn-success" >Continue</button>
 							</div>
 						</div>
 					</ng-template>
@@ -333,7 +345,7 @@
 					<ng-template ngbNavContent>
 						<div class="bgTran7 card shadow my-3 w-100">
 							<div class="row  mx-0 mt-2 py-3">
-								
+
 								<div class="col-lg-12">
 									<div class="header_side_heading">
 										<div class="d-flex align-items-center justify-content-between">
@@ -342,20 +354,24 @@
 									</div>
 									<div class="header_side_bdy">
 										<label class="containerradio">In-Spa Services
-										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="spa">
-										  <span class="checkmark"></span>
+											<input type="radio" [(ngModel)]="bookingObj.location" name="location"
+												value="spa">
+											<span class="checkmark"></span>
 										</label>
 										<label class="containerradio">In-Room
-										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="inroom">
-										  <span class="checkmark"></span>
+											<input type="radio" [(ngModel)]="bookingObj.location" name="location"
+												value="inroom">
+											<span class="checkmark"></span>
 										</label>
 										<label class="containerradio">On-property Oceanfront Gazebo
-										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="on_property_oceanfront_gazebo">
-										  <span class="checkmark"></span>
+											<input type="radio" [(ngModel)]="bookingObj.location" name="location"
+												value="on_property_oceanfront_gazebo">
+											<span class="checkmark"></span>
 										</label>
 										<label class="containerradio">Private Location
-										  <input type="radio" [(ngModel)]="bookingObj.location" name="location" value="private_location">
-										  <span class="checkmark"></span>
+											<input type="radio" [(ngModel)]="bookingObj.location" name="location"
+												value="private_location">
+											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
@@ -363,7 +379,7 @@
 							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'spa'">
 								<div class="col-lg-3">
 									<div class="header_side">
-										
+
 										<div class="header_side_heading">
 											<div class="d-flex align-items-center justify-content-between">
 												<h4 class="mb-0">Select SPA</h4>
@@ -374,8 +390,9 @@
 												<div class="category_sec">
 													<select class="form-control mb-2" (change)="onSelectSpa($event)">
 														<option value=""> Please select SPA </option>
-														<option  *ngFor="let item of spaList" value="{{item.id}}">{{item.spaName}}</option>
-													
+														<option *ngFor="let item of spaList" value="{{item.id}}">
+															{{item.spaName}}</option>
+
 													</select>
 												</div>
 												<div class="d-flex mb-1">
@@ -397,45 +414,49 @@
 										<div class="col-md-4" *ngFor="let item of roomList2">
 											<div class="room_bed_bdy">
 												<h4 class="bed_heading mb-1"> {{item.roomName}}</h4>
-												<button class="btn btn-block  btn_multiselect not_available  mb-1" type="button">
+												<button class="btn btn-block  btn_multiselect not_available  mb-1"
+													type="button">
 													<!-- <i class="fa fa-bed fa-2x"></i> -->
 													<img src="assets/images/spabed.png" alt="" class="spabed-icon">
 												</button>
-												<button class="btn btn-block  btn_multiselect not_available  mb-1" type="button">
-													<img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+												<button class="btn btn-block  btn_multiselect not_available  mb-1"
+													type="button">
+													<img src="assets/images/spabed.png" alt=""
+														class="spabed-icon"></button>
 												<button class="btn btn-block  btn_multiselect available_slot  mb-1"
-													type="button"><img src="assets/images/spabed.png" alt="" class="spabed-icon"></button>
+													type="button"><img src="assets/images/spabed.png" alt=""
+														class="spabed-icon"></button>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
 							</div>
 							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'inroom'">
 								<div class="col-lg-6">
 									<div class="form-group mb-2">
-									<label for="inputSPA">Room Number # (if checked-in)</label>
-									<input class="form-select form-control" aria-label="Default select example"	>
-								</div>
+										<label for="inputSPA">Room Number # (if checked-in)</label>
+										<input class="form-select form-control" aria-label="Default select example">
+									</div>
 								</div>
 							</div>
 							<div class="row  mx-0 mt-2 py-3" *ngIf="bookingObj.location == 'private_location'">
 								<div class="col-lg-6">
 									<div class="form-group mb-2">
 										<label for="inputSPA">Address</label>
-										<input class="form-select form-control" aria-label="Default select example"	>
+										<input class="form-select form-control" aria-label="Default select example">
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group mb-2">
 										<label for="inputSPA">city</label>
-										<input class="form-select form-control" aria-label="Default select example"	>
+										<input class="form-select form-control" aria-label="Default select example">
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group mb-2">
 										<label for="inputSPA">Postal / Zip Code</label>
-										<input class="form-select form-control" aria-label="Default select example"	>
+										<input class="form-select form-control" aria-label="Default select example">
 									</div>
 								</div>
 							</div>
@@ -443,7 +464,7 @@
 								<div class="col-lg-12 text-right">
 									<button class="btn btn_booking" (click)="bookNow()">Book Appointment</button>
 								</div>
-								
+
 
 							</div>
 						</div>
